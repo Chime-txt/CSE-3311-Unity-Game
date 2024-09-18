@@ -64,7 +64,7 @@ public class playerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;// move on the x axis (not needed for y-axis because it's a 2D game
-        Debug.Log("Horizontal input: " + horizontal);
+        //Debug.Log("Horizontal input: " + horizontal);
     }
 
 }
