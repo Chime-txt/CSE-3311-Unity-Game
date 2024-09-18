@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (gameObject.tag.Equals("RedNext"))
         {
             if (collision.gameObject.tag.Equals("Red"))
@@ -35,5 +36,12 @@ public class NewBehaviourScript : MonoBehaviour
             isOnBlue = false;
         }
 
+    }
+    private void Update()
+    {
+        if (isOnRed && isOnBlue)
+        {
+            Debug.Log("YOU WIN!!!!!");
+        }
     }
 }

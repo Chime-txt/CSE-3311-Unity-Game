@@ -8,6 +8,8 @@ TagManager:
   - Purple
   - Red
   - Blue
+  - RedNext
+  - BlueNext
   layers:
   - Default
   - TransparentFX
