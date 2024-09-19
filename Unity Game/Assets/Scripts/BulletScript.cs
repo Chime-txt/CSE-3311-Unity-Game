@@ -8,10 +8,23 @@ public class BulletScript : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
 
+    private GameObject player;
+    [SerializeField] float bulletLifeTime = 2f;
+    [SerializeField] string nameOfPlayer = "NULL";
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag(nameOfPlayer);
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;
+        if (player.transform.localScale.x > 0)
+        {
+            rb.velocity = transform.right * speed;
+        }
+        else if (player.transform.localScale.x < 0)
+        {
+            rb.velocity = -transform.right * speed;
+        }
+        Destroy(gameObject, bulletLifeTime);
     }
 }
