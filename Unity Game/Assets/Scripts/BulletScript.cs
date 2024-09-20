@@ -10,12 +10,12 @@ public class BulletScript : MonoBehaviour
 
     private GameObject player;
     [SerializeField] float bulletLifeTime = 2f;
-    [SerializeField] string nameOfPlayer = "NULL";
+    // [SerializeField] string nameOfPlayer = "NULL";
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag(nameOfPlayer);
+        // player = GameObject.FindWithTag(nameOfPlayer);
         rb = GetComponent<Rigidbody2D>();
         if (player.transform.localScale.x > 0)
         {
@@ -26,5 +26,10 @@ public class BulletScript : MonoBehaviour
             rb.velocity = -transform.right * speed;
         }
         Destroy(gameObject, bulletLifeTime);
+    }
+
+    public void SetPlayer (GameObject player)
+    {
+        this.player = player;
     }
 }
