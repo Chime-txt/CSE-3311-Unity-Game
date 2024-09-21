@@ -16,6 +16,15 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         // player = GameObject.FindWithTag(nameOfPlayer);
+        if (player.tag.Equals("Red"))
+        {
+            gameObject.tag = "RedBullet";
+        }
+        if (player.tag.Equals("Blue"))
+        {
+            gameObject.tag = "BlueBullet";
+        }
+
         rb = GetComponent<Rigidbody2D>();
         if (player.transform.localScale.x > 0)
         {
@@ -26,6 +35,8 @@ public class BulletScript : MonoBehaviour
             rb.velocity = -transform.right * speed;
         }
         Destroy(gameObject, bulletLifeTime);
+
+        
     }
 
     public void SetPlayer (GameObject player)
