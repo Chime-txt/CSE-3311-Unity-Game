@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4114606130250327578}
   - component: {fileID: 5285210546461737544}
   - component: {fileID: 635284476244400939}
+  - component: {fileID: 5770141546818229509}
   m_Layer: 6
   m_Name: Purple
   m_TagString: Purple
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5770141546818229509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7949689597705401651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a1361144623a1418efc97ffe3c6d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
