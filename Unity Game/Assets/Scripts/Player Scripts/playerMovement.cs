@@ -6,15 +6,19 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public bool isOnGround = true;
 
     private float horizontal;
     [SerializeField] float speed = 8f;
     [SerializeField] float jumpingPower = 16f;
     private bool isFacingRight = true;
 
+    public Animator animator;
+
     void Update()
     {
         FlipMethod();
+
     }
 
     private void FlipMethod()
@@ -39,18 +43,34 @@ public class playerMovement : MonoBehaviour
         if (context.performed && IsGrounded()) //If button is pressed and on the ground
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower); //jump
+            isOnGround = false;
+            animator.SetBool("isJumping", true);
+            //animator.SetBool("isJumping", false);
         }
 
         if (context.canceled && rb.velocity.y > 0f) // if button is pressed and moving upward
         {
+            //Debug.Log("Should be set to False");
+            //animator.SetBool("isJumping", false);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
+            Debug.Log("Should be set to False");
+            animator.SetBool("isJumping", false);
         }
     }
 
     private bool IsGrounded() 
     {
+
         //if touching the ground set to true
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        Debug.Log("isGrounded is set to: " + Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer));
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer))
+        {
+            isOnGround = true;
+            //Debug.Log("Should be set to False");
+            //animator.SetBool("isJumping", false);
+            return true;
+        }
+        return false;
     }
 
     private void Flip()
