@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class playerDeaths : MonoBehaviour
 {
-
+    [SerializeField] float timeTillDeath = 2f;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,18 +15,24 @@ public class playerDeaths : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("RedEnemy") && gameObject.tag.Equals("Blue") )// if the player collides with RedEnemy
         {
-            Destroy(gameObject);
+            KillPlayer();
         }
         else if (collision.gameObject.tag.Equals("BlueEnemy") && gameObject.tag.Equals("Red")) // if the player collides with RedEnemy
         {
-            Destroy(gameObject);
+            KillPlayer();
         }
         else if (collision.gameObject.tag.Equals("Purple")) // if the player collides with PurpleEnemy
         {
-            Debug.Log("Player Destroyed");
-            Destroy(gameObject);
+            KillPlayer();
         }
     }
+
+    private void KillPlayer()
+    {
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, timeTillDeath);
+    }
+
     // Update is called once per frame
     void Update()
     {

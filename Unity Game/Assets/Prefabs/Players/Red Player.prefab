@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 7184881757241802665}
   - component: {fileID: 7474008377925817597}
   - component: {fileID: -6592035446864251127}
+  - component: {fileID: 6072713138677902089}
   m_Layer: 0
   m_Name: Red Player
   m_TagString: Red
@@ -314,8 +315,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  isOnGround: 1
   speed: 5
   jumpingPower: 10
+  animator: {fileID: 6072713138677902089}
 --- !u!114 &7184881757241802665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c6598252c59f649a612c35739f16ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTillDeath: 2
+  animator: {fileID: 6072713138677902089}
 --- !u!114 &-6592035446864251127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,3 +359,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 8153042351638380953}
   bulletPrefab: {fileID: 4665605975415529816, guid: 5d39fb55b9951fd428b1676c808936ea, type: 3}
+  speed: 0
+--- !u!95 &6072713138677902089
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890171908077612828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfdb4d2f80da0fd449348e31347bc646, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

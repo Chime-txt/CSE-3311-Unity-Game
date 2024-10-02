@@ -6225,32 +6225,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &486459912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7890171908077612828, guid: a4c8e8fdc7e7d26429277abc3c11c84f, type: 3}
-  m_PrefabInstance: {fileID: 1817264986}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &486459913
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486459912}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dfdb4d2f80da0fd449348e31347bc646, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &492529465
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,11 +7094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114606130250327578, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.502
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 4114606130250327578, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4907
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 4114606130250327578, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7162,6 +7136,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -762311695, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+    - target: {fileID: 5285210546461737544, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285210546461737544, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285210546461737544, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5285210546461737544, guid: 289891d46f9755f41b32b6f4d4c3b3d8, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7513,10 +7499,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5626852143315913819, guid: a4c8e8fdc7e7d26429277abc3c11c84f, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 486459913}
     - target: {fileID: 7890171908077612828, guid: a4c8e8fdc7e7d26429277abc3c11c84f, type: 3}
       propertyPath: m_Name
       value: Red Player
@@ -7524,10 +7506,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7890171908077612828, guid: a4c8e8fdc7e7d26429277abc3c11c84f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 486459913}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4c8e8fdc7e7d26429277abc3c11c84f, type: 3}
 --- !u!1 &2048607687
 GameObject:
