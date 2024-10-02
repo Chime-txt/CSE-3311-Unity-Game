@@ -18,7 +18,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         FlipMethod();
-
+        IsGrounded(); // Continuously check if on ground
     }
 
     private void FlipMethod()
@@ -40,37 +40,34 @@ public class playerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded()) //If button is pressed and on the ground
+        if (context.performed && isOnGround) // Use isOnGround directly
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower); //jump
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // jump
             isOnGround = false;
-            animator.SetBool("isJumping", true);
-            //animator.SetBool("isJumping", false);
+            animator.SetBool("isJumping", !isOnGround);
         }
 
-        if (context.canceled && rb.velocity.y > 0f) // if button is pressed and moving upward
+        if (context.canceled && rb.velocity.y > 0f)
         {
-            //Debug.Log("Should be set to False");
-            //animator.SetBool("isJumping", false);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
-            Debug.Log("Should be set to False");
             animator.SetBool("isJumping", false);
         }
     }
 
-    private bool IsGrounded() 
+    private bool IsGrounded()
     {
-
-        //if touching the ground set to true
-        Debug.Log("isGrounded is set to: " + Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer));
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer))
+        bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (grounded)
         {
             isOnGround = true;
-            //Debug.Log("Should be set to False");
-            //animator.SetBool("isJumping", false);
-            return true;
+            animator.SetBool("isJumping", !isOnGround);
         }
-        return false;
+        else
+        {
+            isOnGround = false; // Update isOnGround if not grounded
+            animator.SetBool("isJumping", !isOnGround);
+        }
+        return grounded;
     }
 
     private void Flip()

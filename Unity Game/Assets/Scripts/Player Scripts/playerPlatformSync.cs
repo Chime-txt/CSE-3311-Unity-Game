@@ -8,7 +8,6 @@ public class PlayerPlatformSync : MonoBehaviour
     {
         //Debug.Log("Able to get triggered");
         //Debug.Log(collision.gameObject.name);
-
         // Check if the player has collided with a moving platform
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
