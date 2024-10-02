@@ -14,6 +14,7 @@ TagManager:
   - RedEnemy
   - RedBullet
   - BlueBullet
+  - Button
   layers:
   - Default
   - TransparentFX
