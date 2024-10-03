@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
+    path: Assets/Scenes/Test Scenes/TitlePlusButtonTestScene.unity
     guid: cd963e362e9b4bd418913d7bf7add06d
   - enabled: 1
     path: Assets/Scenes/TilemapTestScene.unity
     guid: afb57b417e1ad6741a2386fa4489dad9
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_AK_recovered.unity
+    guid: 5b2b6d40db269c641a44c7be5dbd358e
   m_configObjects: {}
