@@ -15,11 +15,17 @@ public class ChangeSceneScript : MonoBehaviour
     }
 
     // When creating new scenes / levels, add a new function to be able to load the scene
-    
+
     // Load TilemapTestScene using Scene Name
     public void LoadTilemapTestScene()
     {
         Debug.Log("Loading TilemapTestScene...");
         SceneManager.LoadScene("TilemapTestScene");
+    }
+
+    // Load Any Scene Using Scene Name (Uses One Function And We Edit This Value In Unity, And Ensures Consistency)
+    public void ChangingScenes(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
