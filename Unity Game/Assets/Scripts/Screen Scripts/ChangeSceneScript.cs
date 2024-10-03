@@ -20,6 +20,6 @@ public class ChangeSceneScript : MonoBehaviour
     public void LoadTilemapTestScene()
     {
         Debug.Log("Loading TilemapTestScene...");
-        SceneManager.LoadScene("1");
+        SceneManager.LoadScene("TilemapTestScene");
     }
 }
