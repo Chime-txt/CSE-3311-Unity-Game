@@ -6,24 +6,10 @@ using UnityEngine.SceneManagement;
 // ChangeSceneScript changes the scene using the Unity Scene Management
 public class ChangeSceneScript : MonoBehaviour
 {
-    // With the function below, we could layer the scenes based on the build settings
+    // The scene must first be included in the build settings before the script can change scenes
 
-    // Takes the scene ID from Unity Build Settings and loads the scene using the scene ID
-    public void MoveToScene(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
-    }
-
-    // When creating new scenes / levels, add a new function to be able to load the scene
-
-    // Load TilemapTestScene using Scene Name
-    public void LoadTilemapTestScene()
-    {
-        Debug.Log("Loading TilemapTestScene...");
-        SceneManager.LoadScene("TilemapTestScene");
-    }
-
-    // Load Any Scene Using Scene Name (Uses One Function And We Edit This Value In Unity, And Ensures Consistency)
+    // Load any scene using scene name (uses one function and we can edit this value in Unity and
+    // ensures consistency)
     public void ChangingScenes(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
