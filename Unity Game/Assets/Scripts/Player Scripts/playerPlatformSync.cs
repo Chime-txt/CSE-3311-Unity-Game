@@ -6,8 +6,8 @@ public class PlayerPlatformSync : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Able to get triggered");
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log("Able to get triggered");
+        //Debug.Log(collision.gameObject.name);
         // Check if the player has collided with a moving platform
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {

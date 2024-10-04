@@ -6,15 +6,19 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public bool isOnGround = true;
 
     private float horizontal;
     [SerializeField] float speed = 8f;
     [SerializeField] float jumpingPower = 16f;
     private bool isFacingRight = true;
 
+    public Animator animator;
+
     void Update()
     {
         FlipMethod();
+        IsGrounded(); // Continuously check if on ground
     }
 
     private void FlipMethod()
@@ -36,21 +40,34 @@ public class playerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded()) //If button is pressed and on the ground
+        if (context.performed && isOnGround) // Use isOnGround directly
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower); //jump
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // jump
+            isOnGround = false;
+            animator.SetBool("isJumping", !isOnGround);
         }
 
-        if (context.canceled && rb.velocity.y > 0f) // if button is pressed and moving upward
+        if (context.canceled && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
+            animator.SetBool("isJumping", false);
         }
     }
 
-    private bool IsGrounded() 
+    private bool IsGrounded()
     {
-        //if touching the ground set to true
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (grounded)
+        {
+            isOnGround = true;
+            animator.SetBool("isJumping", !isOnGround);
+        }
+        else
+        {
+            isOnGround = false; // Update isOnGround if not grounded
+            animator.SetBool("isJumping", !isOnGround);
+        }
+        return grounded;
     }
 
     private void Flip()
