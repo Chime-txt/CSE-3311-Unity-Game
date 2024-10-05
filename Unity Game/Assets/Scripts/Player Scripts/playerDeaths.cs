@@ -6,10 +6,11 @@ public class playerDeaths : MonoBehaviour
 {
     [SerializeField] float timeTillDeath = 2f;
     public Animator animator;
+    playerMovement playerMove;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMove = GetComponent<playerMovement>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,6 +30,7 @@ public class playerDeaths : MonoBehaviour
 
     private void KillPlayer()
     {
+        playerMove.isAbleToMove = false;
         animator.SetBool("isDead", true);
         Destroy(gameObject, timeTillDeath);
     }

@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public bool isOnGround = true;
+    public bool isAbleToMove = true;
 
     private float horizontal;
     [SerializeField] float speed = 8f;
@@ -40,19 +41,22 @@ public class playerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && isOnGround) // Use isOnGround directly
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // jump
-            isOnGround = false;
-            animator.SetBool("isJumping", !isOnGround);
-        }
+        if (isAbleToMove)
+        { 
+            if (context.performed && isOnGround) // Use isOnGround directly
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // jump
+                isOnGround = false;
+                animator.SetBool("isJumping", !isOnGround);
+            }
 
-        if (context.canceled && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
-            animator.SetBool("isJumping", false);
+            if (context.canceled && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
+                animator.SetBool("isJumping", false);
+            }
         }
-    }
+}
 
     private bool IsGrounded()
     {
@@ -80,8 +84,19 @@ public class playerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<Vector2>().x;// move on the x axis (not needed for y-axis because it's a 2D game
-        //Debug.Log("Horizontal input: " + horizontal);
+        if (isAbleToMove)
+        {
+            horizontal = context.ReadValue<Vector2>().x;// move on the x axis (not needed for y-axis because it's a 2D game
+           //Debug.Log("Horizontal input: " + horizontal);
+           if (!isAbleToMove && horizontal > 0f)
+            {
+                horizontal = 0f;
+            }
+        }
+        else
+        {
+            horizontal = 0f;
+        }
     }
 
 }
