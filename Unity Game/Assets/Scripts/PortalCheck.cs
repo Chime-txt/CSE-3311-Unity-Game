@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PortalCheck : MonoBehaviour
 {
-    private bool isRedPlayerInRedPortal = false;
-    private bool isBluePlayerInBluePortal = false;
+    public bool isRedPlayerInRedPortal = false;
+    public bool isBluePlayerInBluePortal = false;
+
+    public PortalCheck portalCheck;
 
     // Reference to your Level Complete UI or message
     public GameObject levelCompleteMessage;
@@ -12,23 +14,46 @@ public class PortalCheck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if this portal is the Red Portal
-        if (collision.gameObject.tag.Equals("Red"))
+        if (collision.gameObject.tag.Equals("Red") && gameObject.tag.Equals("RedNext"))
         {
             isRedPlayerInRedPortal = true;
+            portalCheck.isRedPlayerInRedPortal = true;
+        }
+        // Check if this portal is the Blue Portal
+        else if (collision.gameObject.tag.Equals("Blue") && gameObject.tag.Equals("BlueNext"))
+        {
+            isBluePlayerInBluePortal = true;
+            portalCheck.isBluePlayerInBluePortal = true;
+
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Check if this portal is the Red Portal
+        if (collision.gameObject.tag.Equals("Red"))
+        {
+            isRedPlayerInRedPortal = false;
+            portalCheck.isRedPlayerInRedPortal = false;
+
         }
         // Check if this portal is the Blue Portal
         else if (collision.gameObject.tag.Equals("Blue"))
         {
-            isBluePlayerInBluePortal = true;
+            isBluePlayerInBluePortal = false;
+            portalCheck.isBluePlayerInBluePortal = false;
+
         }
 
+    }
+    private void Update()
+    {
         // Check if both players are in their respective portals
         if (isRedPlayerInRedPortal && isBluePlayerInBluePortal)
         {
             CompleteLevel();
         }
     }
-
     /*// This method gets called when a player exits the portal's trigger collider
     private void OnTriggerExit2D(Collider2D collision)
     {
