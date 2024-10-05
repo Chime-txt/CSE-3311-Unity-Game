@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     public bool isOnRed = false;
     public bool isOnBlue = false;
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);

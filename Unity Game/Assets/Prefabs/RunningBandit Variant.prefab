@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1571579726684327163, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.75
+      value: -16.35
       objectReference: {fileID: 0}
     - target: {fileID: 1571579726684327163, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 5.77
       objectReference: {fileID: 0}
     - target: {fileID: 1571579726684327163, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunningBandit Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1669804044853387789, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90,6 +94,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6907000975969085113}
+    - targetCorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2857892676214431234}
   m_SourcePrefab: {fileID: 100100000, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
 --- !u!1 &5662188916758223248 stripped
 GameObject:
@@ -123,3 +130,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a1361144623a1418efc97ffe3c6d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2857892676214431234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662188916758223248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031696e247c291042809130531ce72bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  movementRange: 5
