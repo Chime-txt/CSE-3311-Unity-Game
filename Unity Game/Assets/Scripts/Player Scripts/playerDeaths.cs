@@ -7,6 +7,10 @@ public class playerDeaths : MonoBehaviour
     [SerializeField] float timeTillDeath = 2f;
     public Animator animator;
     playerMovement playerMove;
+
+    //
+    public LevelManagerScript levelManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +34,11 @@ public class playerDeaths : MonoBehaviour
 
     private void KillPlayer()
     {
-        playerMove.isAbleToMove = false;
+        Debug.Log("A player is dead");
         animator.SetBool("isDead", true);
+        playerMove.isAbleToMove = false;
         Destroy(gameObject, timeTillDeath);
+        levelManager.gameOver();
     }
 
     // Update is called once per frame
