@@ -1,80 +1,72 @@
 using UnityEngine;
+using System.Collections;
 
 public class PortalCheck : MonoBehaviour
 {
-    public bool isRedPlayerInRedPortal = false;
-    public bool isBluePlayerInBluePortal = false;
+    public bool isRedPortal = false;
 
-    public PortalCheck portalCheck;
+    public PortalCheck otherPortalCheck;
 
-    // Reference to your Level Complete UI or message
     public GameObject levelCompleteMessage;
+    public Animator redPlayerAnimator;
+    public Animator bluePlayerAnimator;
 
-    // This method gets called when a player enters a portal's trigger collider
+    private static bool redPlayerFaded = false;
+    private static bool bluePlayerFaded = false;
+    private static bool hasLevelCompleted = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if this portal is the Red Portal
-        if (collision.gameObject.tag.Equals("Red") && gameObject.tag.Equals("RedNext"))
+        if (isRedPortal && collision.gameObject.tag.Equals("Red") && !redPlayerFaded)
         {
-            isRedPlayerInRedPortal = true;
-            portalCheck.isRedPlayerInRedPortal = true;
+            // Red player enters red portal
+            redPlayerAnimator.SetTrigger("Fadeout");
+            StartCoroutine(FadeOutPlayer("Red"));  // Start red player's fade-out
         }
-        // Check if this portal is the Blue Portal
-        else if (collision.gameObject.tag.Equals("Blue") && gameObject.tag.Equals("BlueNext"))
+        else if (!isRedPortal && collision.gameObject.tag.Equals("Blue") && !bluePlayerFaded)
         {
-            isBluePlayerInBluePortal = true;
-            portalCheck.isBluePlayerInBluePortal = true;
-
+            // Blue player enters blue portal
+            bluePlayerAnimator.SetTrigger("Fadeout");
+            StartCoroutine(FadeOutPlayer("Blue"));  // Start blue player's fade-out
         }
-
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    // Handle player fade-out
+    private IEnumerator FadeOutPlayer(string playerTag)
     {
-        // Check if this portal is the Red Portal
-        if (collision.gameObject.tag.Equals("Red"))
-        {
-            isRedPlayerInRedPortal = false;
-            portalCheck.isRedPlayerInRedPortal = false;
+        float fadeOutDuration = 1.0f;
+        yield return new WaitForSeconds(fadeOutDuration);  // Wait for animation to finish
 
+        if (playerTag == "Red")
+        {
+            redPlayerFaded = true;
         }
-        // Check if this portal is the Blue Portal
-        else if (collision.gameObject.tag.Equals("Blue"))
+        else if (playerTag == "Blue")
         {
-            isBluePlayerInBluePortal = false;
-            portalCheck.isBluePlayerInBluePortal = false;
-
+            bluePlayerFaded = true;
         }
 
+        CheckLevelCompletion();
     }
-    private void Update()
+
+    // Check if both players have faded out and complete the level
+    private void CheckLevelCompletion()
     {
-        // Check if both players are in their respective portals
-        if (isRedPlayerInRedPortal && isBluePlayerInBluePortal)
+        if (redPlayerFaded && bluePlayerFaded && !hasLevelCompleted)
         {
             CompleteLevel();
         }
     }
-    /*// This method gets called when a player exits the portal's trigger collider
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (gameObject.CompareTag("RedPortal") && collision.gameObject.tag.Equals("Red"))
-        {
-            isRedPlayerInRedPortal = false;
-        }
-        else if (gameObject.CompareTag("BluePortal") && collision.gameObject.tag.Equals("Blue"))
-        {
-            isBluePlayerInBluePortal = false;
-        }
-    }*/
 
-    // This method handles level completion when both players are in the correct portals
+    // Complete the level and display the level complete message
     private void CompleteLevel()
     {
+        hasLevelCompleted = true;
         Debug.Log("Level 1 complete!");
+
         if (levelCompleteMessage != null)
         {
             levelCompleteMessage.SetActive(true);
         }
     }
 }
-
