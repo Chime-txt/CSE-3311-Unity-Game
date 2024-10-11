@@ -8,16 +8,27 @@ public class ChangeSceneScript : MonoBehaviour
 {
     // The scene must first be included in the build settings before the script can change scenes
 
-    
-    // To run this function, there will be a specific amount of UI Buttons (Start Game, Main Menu
-    // Restart, Level Select, Level) that will make this function run based on the scene that we
-    // pass into this function from a text field in the Button's On Click function in Unity
+    // This function changes from the current scene to the dedicated scene with the scene name
+    // To run this function, one of the listed UI Buttons (Start Game, Main Menu Level Select, Level)
+    // has to be pressed and then selected
     public void ChangingScenes(string sceneName)
     {
         // Load any scene using scene name (uses one function and we can edit this value in Unity
         // and ensures consistency)
         SceneManager.LoadScene(sceneName);
+
+        // Resume in-game speed (1)
+        Time.timeScale = 1;
+
         // For debugging purposes, we print the new scene name into the console
         Debug.Log("Scene Changed To " + sceneName);
+    }
+
+    // This function is dedicated to the Restart UI button which restarts the level with the
+    // current build index
+    public void RestartLevel()
+    {
+        // Loads the same level using the build index
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

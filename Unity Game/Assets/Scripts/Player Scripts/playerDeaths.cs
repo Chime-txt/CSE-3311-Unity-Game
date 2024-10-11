@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerDeaths : MonoBehaviour
 {
-    [SerializeField] float timeTillDeath = 2f;
+    [SerializeField] float timeTillDeath = 1.4f;
     public Animator animator;
     playerMovement playerMove;
 
@@ -31,14 +31,35 @@ public class playerDeaths : MonoBehaviour
             KillPlayer();
         }
     }
-
+    
+    // This function kills the current player and triggers the game over screen
+    // To make this function run, the player has to collide with other enemies of different colors
     private void KillPlayer()
     {
         Debug.Log("A player is dead");
-        animator.SetBool("isDead", true);
+
+        // Disable player movement
         playerMove.isAbleToMove = false;
-        Destroy(gameObject, timeTillDeath);
-        levelManager.gameOver();
+
+        // Call a coroutine to play the death animation 
+        StartCoroutine(DeathAnimation());
+
+        IEnumerator DeathAnimation()
+        {
+            // Play the character death animation
+            animator.SetBool("isDead", true);
+    
+            // Destroys the character
+            Destroy(gameObject, timeTillDeath);
+
+            // Waits for the current player to finish its death animation
+            yield return new WaitForSeconds(1.4f);
+
+            // Trigger the game over function
+            levelManager.gameOver();
+        }
+        
+
     }
 
     // Update is called once per frame
