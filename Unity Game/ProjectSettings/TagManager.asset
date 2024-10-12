@@ -16,6 +16,7 @@ TagManager:
   - BlueBullet
   - Button
   - UI Buttons
+  - Death Planes
   layers:
   - Default
   - TransparentFX

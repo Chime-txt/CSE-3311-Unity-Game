@@ -176,28 +176,14 @@ GameObject:
   m_Component:
   - component: {fileID: 493254607}
   - component: {fileID: 493254606}
-  - component: {fileID: 493254605}
-  - component: {fileID: 493254608}
   - component: {fileID: 493254609}
   m_Layer: 0
   m_Name: Death Plane Left
-  m_TagString: Untagged
+  m_TagString: Death Planes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &493254605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493254604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e7f09c5d2636b468323d839158e981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &493254606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -265,18 +251,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 909721992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &493254608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493254604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943d74eccd020584a9e3b8b1965176bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &493254609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -476,7 +450,7 @@ GameObject:
   - component: {fileID: 909721992}
   m_Layer: 0
   m_Name: Death Planes
-  m_TagString: Untagged
+  m_TagString: Death Planes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,11 +483,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1039256296}
   - component: {fileID: 1039256295}
-  - component: {fileID: 1039256297}
   - component: {fileID: 1039256298}
   m_Layer: 0
   m_Name: Death Plane Bottom
-  m_TagString: Purple
+  m_TagString: Death Planes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,18 +558,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 909721992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1039256297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039256294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e7f09c5d2636b468323d839158e981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1039256298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -626,7 +587,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1212,7 +1173,7 @@ GameObject:
   - component: {fileID: 1294150628}
   m_Layer: 0
   m_Name: Death Plane Right
-  m_TagString: Untagged
+  m_TagString: Death Planes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4419,6 +4380,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2603775}
     m_Modifications:
     - target: {fileID: 1361295335012559135, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
+      propertyPath: deathPlanes
+      value: 
+      objectReference: {fileID: 909721991}
+    - target: {fileID: 1361295335012559135, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 172966062}
@@ -4471,6 +4436,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
+--- !u!1 &1774245004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1774245005}
+  m_Layer: 0
+  m_Name: Player Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1774245005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774245004}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4745673, y: -2.9341803, z: 0.07393256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1796758162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4479,6 +4475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2603775}
     m_Modifications:
+    - target: {fileID: 78812814761497541, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: deathPlanes
+      value: 
+      objectReference: {fileID: 909721991}
     - target: {fileID: 78812814761497541, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: levelManager
       value: 
@@ -4640,5 +4640,6 @@ SceneRoots:
   - {fileID: 714414735}
   - {fileID: 909721992}
   - {fileID: 2603775}
+  - {fileID: 1774245005}
   - {fileID: 901081714}
   - {fileID: 8899951164781381074}

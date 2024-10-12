@@ -8,6 +8,7 @@ public class LevelManagerScript : MonoBehaviour
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] GameObject pauseButtonUI;
 
+    // The state of the player object is one way to determine the state of the level manager 
     [SerializeField] GameObject playersObject;
 
     // Start is called before the first frame update
@@ -23,6 +24,8 @@ public class LevelManagerScript : MonoBehaviour
         // will not interact with the game
         // Cursor.visible = false;
         // Cursor.lockState = CursorLockMode.Locked;
+
+        Debug.Log("> Level Start");
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class LevelManagerScript : MonoBehaviour
     private void FixedUpdate()
     {
         // This if conditional causes the cursor to appear and be able to move
-        // To make this conditional run, it requires the game over screen to appear
+        // To trigger this conditional, it requires the game over screen to appear
         if (gameOverUI.activeInHierarchy)
         {
             // Enables the cursor to appear
@@ -56,7 +59,7 @@ public class LevelManagerScript : MonoBehaviour
     }
 
     // This function causes the pause menu overlay to appear
-    // To make this function run, it requires the player to (click the pause button)
+    // To trigger this function, it requires the player to (click the pause button)
     // Later change this to the ESC (Escape) key
     public void isPaused()
     {
@@ -91,7 +94,7 @@ public class LevelManagerScript : MonoBehaviour
     }
 
     // This function causes the game over screen to appear
-    // To make this function run, it requires the player to die.
+    // To trigger this function, it requires the player to die.
     public void gameOver()
     {
         // Pause in-game speed (0)
@@ -106,10 +109,12 @@ public class LevelManagerScript : MonoBehaviour
 
         // Enable game over screen UI
         gameOverUI.SetActive(true);
+
+        Debug.Log("> Game Over");
     }
 
     // This function sets the game speed when necessary
-    // To make this function run, it requires the user to trigger the game over screen
+    // To trigger this function, it requires the user to trigger the game over screen
     // or trigger the pause menu overlay (or start the level, which is redundant)
     protected void setGameSpeed(int gameSpeed)
     {

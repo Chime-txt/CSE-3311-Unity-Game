@@ -9,7 +9,7 @@ public class ChangeSceneScript : MonoBehaviour
     // The scene must first be included in the build settings before the script can change scenes
 
     // This function changes from the current scene to the dedicated scene with the scene name
-    // To run this function, one of the listed UI Buttons (Start Game, Main Menu Level Select, Level)
+    // To trigger this function, one of the listed UI Buttons (Start Game, Main Menu Level Select, Level)
     // has to be pressed and then selected
     public void ChangingScenes(string sceneName)
     {
@@ -26,6 +26,7 @@ public class ChangeSceneScript : MonoBehaviour
 
     // This function is dedicated to the Restart UI button which restarts the level with the
     // current build index
+    // To trigger this function, the Restart button has to be pressed and then selected
     public void RestartLevel()
     {
         // Loads the same level using the build index

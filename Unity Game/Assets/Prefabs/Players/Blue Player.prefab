@@ -344,8 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c6598252c59f649a612c35739f16ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDeath: 2
+  timeTillDeath: 1.4
   animator: {fileID: 8910177661878614681}
+  deathPlanes: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!114 &3052680265807090114
 MonoBehaviour:
