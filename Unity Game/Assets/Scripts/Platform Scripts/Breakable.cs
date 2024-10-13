@@ -15,22 +15,26 @@ public class Breakable : MonoBehaviour
         if (collision.gameObject.tag.Equals("RedBullet") && gameObject.tag.Equals("Blue"))// if the player collides with RedEnemy
         {
             Instantiate(particles, transform.position, transform.rotation);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            DestroyBlock(collision);
         }
         else if (collision.gameObject.tag.Equals("BlueBullet") && gameObject.tag.Equals("Red")) // if the player collides with RedEnemy
         {
             Instantiate(particles, transform.position, transform.rotation);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            DestroyBlock(collision);
         }
         else if ((collision.gameObject.tag.Equals("RedBullet") || collision.gameObject.tag.Equals("BlueBullet")) && gameObject.tag.Equals("Purple")) // if the player collides with PurpleEnemy
         {
             Instantiate(particles, transform.position, transform.rotation);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            DestroyBlock(collision);
         }
     }
+
+    private void DestroyBlock(Collision2D collision)
+    {
+        Destroy(collision.gameObject);
+        Destroy(gameObject, .2f);
+    }
+
     // Update is called once per frame
     void Update()
     {

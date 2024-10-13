@@ -16,12 +16,12 @@ TagManager:
   - BlueBullet
   - Button
   - UI Buttons
-  - Death Planes
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Players
+  - 
   - Water
   - UI
   - Ground
