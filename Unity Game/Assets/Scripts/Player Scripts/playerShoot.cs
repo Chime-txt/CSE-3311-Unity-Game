@@ -17,9 +17,9 @@ public class playerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag.Equals("Red"))
+        if (gameObject.tag.Equals("Red")) 
         {
-            if (Input.GetKeyDown(KeyCode.S) == true)
+            if (Input.GetKeyDown(KeyCode.S) == true) //If Player Red presses S fires a bullet
             {
                 GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
                 BulletScript bulletScript = bullet.GetComponent<BulletScript>();
@@ -30,7 +30,7 @@ public class playerShoot : MonoBehaviour
         }
         if (gameObject.tag.Equals("Blue"))
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow) == true)
+            if (Input.GetKeyDown(KeyCode.DownArrow) == true) //If Player Blue presses down arrow fires a bullet
             {
                 GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
                 BulletScript bulletScript = bullet.GetComponent<BulletScript>();
