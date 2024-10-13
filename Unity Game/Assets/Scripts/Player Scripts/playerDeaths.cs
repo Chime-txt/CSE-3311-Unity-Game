@@ -30,9 +30,9 @@ public class playerDeaths : MonoBehaviour
 
     private void KillPlayer()
     {
-        playerMove.isAbleToMove = false;
-        animator.SetBool("isDead", true);
-        Destroy(gameObject, timeTillDeath);
+        playerMove.isAbleToMove = false; //Disable the players ability to move 
+        animator.SetBool("isDead", true); //Play the death animation
+        Destroy(gameObject, timeTillDeath); //Destory the gameobject in timeTIllDeath seconds
     }
 
     // Update is called once per frame

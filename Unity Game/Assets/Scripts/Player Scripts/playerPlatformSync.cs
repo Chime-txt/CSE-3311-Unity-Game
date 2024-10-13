@@ -4,10 +4,18 @@ public class PlayerPlatformSync : MonoBehaviour
 {
     private Transform originalParent; // Store the player's original parent
 
+
+
+    /*
+     * The reason for this script is because the if the player were to land on a moving platform and that platforms begins to move 
+     * the player will not because the movingPlatform script moves itself only. By making the player a child of the platform they will
+     * both move when the platform moves.
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Able to get triggered");
         //Debug.Log(collision.gameObject.name);
+
         // Check if the player has collided with a moving platform
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {

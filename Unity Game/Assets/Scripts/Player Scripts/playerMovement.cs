@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
     {
         if (!isFacingRight && horizontal > 0f) //if moving right
         {
-            Flip();
+            Flip(); 
         }
         else if (isFacingRight && horizontal < 0f) //if moving left
         {
@@ -50,7 +50,7 @@ public class playerMovement : MonoBehaviour
                 animator.SetBool("isJumping", !isOnGround);
             }
 
-            if (context.canceled && rb.velocity.y > 0f)
+            if (context.canceled && rb.velocity.y > 0f) // if the player is falling down
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); //go down
                 animator.SetBool("isJumping", false);
@@ -63,13 +63,13 @@ public class playerMovement : MonoBehaviour
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         if (grounded)
         {
-            isOnGround = true;
-            animator.SetBool("isJumping", !isOnGround);
+            isOnGround = true; //Make the player unable to jump
+            animator.SetBool("isJumping", !isOnGround); // Don't play jumping animation
         }
         else
         {
-            isOnGround = false; // Update isOnGround if not grounded
-            animator.SetBool("isJumping", !isOnGround);
+            isOnGround = false; //Make the the player unable to jump
+            animator.SetBool("isJumping", !isOnGround); //PLay jumping animation
         }
         return grounded;
     }
@@ -86,7 +86,7 @@ public class playerMovement : MonoBehaviour
     {
         if (isAbleToMove)
         {
-            horizontal = context.ReadValue<Vector2>().x;// move on the x axis (not needed for y-axis because it's a 2D game
+            horizontal = context.ReadValue<Vector2>().x;// move on the x axis (not needed for y-axis because it's a 2D game with gravity
            //Debug.Log("Horizontal input: " + horizontal);
            if (!isAbleToMove && horizontal > 0f)
             {
@@ -95,7 +95,7 @@ public class playerMovement : MonoBehaviour
         }
         else
         {
-            horizontal = 0f;
+            horizontal = 0f; // if player is unable to move don't move the player
         }
     }
 
