@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Official Game Scenes/TitleScreen.unity
     guid: c7fb474eab709f44ba0293513552fcf4
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/DeathPlanePlusOverlay.unity
+    guid: 1f87547e2bbd0434289b7b52fddb1b34
+  - enabled: 1
+    path: Assets/Scenes/Official Game Scenes/MainMenu.unity
+    guid: 78f3a506dfd3277419a25f2f0582411a
   m_configObjects: {}
