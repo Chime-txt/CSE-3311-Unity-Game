@@ -10,13 +10,10 @@ public class BulletScript : MonoBehaviour
 
     private GameObject player;
     [SerializeField] float bulletLifeTime = 2f;
-    // [SerializeField] string nameOfPlayer = "NULL";
-
     // Start is called before the first frame update
     void Start()
     {
-        
-        // player = GameObject.FindWithTag(nameOfPlayer);
+        // Assign bullet tags based on which Player shot the bullete
         if (player.tag.Equals("Red"))
         {
             gameObject.tag = "RedBullet";
@@ -36,6 +33,7 @@ public class BulletScript : MonoBehaviour
             rb.velocity = -transform.right * speed;
         }
 
+        // Destroy the bullet after a set time
         Destroy(gameObject, bulletLifeTime);
 
         
@@ -43,12 +41,14 @@ public class BulletScript : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // If the bullet hits the ground or wall, the bullet is destroyed
         if (collision.gameObject.tag.Equals("Ground"))
         {
             Destroy(gameObject);
         }
     }
     
+    // Assign bullet to Player
 public void SetPlayer (GameObject player)
     {
         this.player = player;

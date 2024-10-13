@@ -20,11 +20,13 @@ public class Activation : MonoBehaviour
 
     }
 
+    // Assigns an object that needs to be destroyed
     public GameObject TargetObject;
 
     // Update is called once per frame
     void Update()
     {
+        // If the TargetObject is destroyed
         if (TargetObject == null)
         {
             // Calculate the new position using Mathf.Sin
