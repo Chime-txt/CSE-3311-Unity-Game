@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/TitlePlusButtonTestScene.unity
     guid: cd963e362e9b4bd418913d7bf7add06d
   - enabled: 1
-    path: Assets/Scenes/TilemapTestScene.unity
+    path: Assets/Scenes/TilemapTestScene2.unity
     guid: afb57b417e1ad6741a2386fa4489dad9
   - enabled: 1
     path: Assets/Scenes/SampleScene_AK_recovered.unity

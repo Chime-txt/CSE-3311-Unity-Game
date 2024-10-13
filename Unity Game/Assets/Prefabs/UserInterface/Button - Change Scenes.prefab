@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 7897886203191530166}
   - component: {fileID: 4954915646554000158}
   m_Layer: 5
-  m_Name: Button - ChangingScenes
+  m_Name: Button - Change Scenes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
