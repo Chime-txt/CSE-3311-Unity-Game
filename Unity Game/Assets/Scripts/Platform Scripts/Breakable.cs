@@ -12,17 +12,17 @@ public class Breakable : MonoBehaviour
     public GameObject particles;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("RedBullet") && gameObject.tag.Equals("Blue"))// if the player collides with RedEnemy
+        if (collision.gameObject.tag.Equals("RedBullet") && gameObject.tag.Equals("Blue"))// if the bullet from the Red Player collides with a Blue object, both are destroyed
         {
             Instantiate(particles, transform.position, transform.rotation);
             DestroyBlock(collision);
         }
-        else if (collision.gameObject.tag.Equals("BlueBullet") && gameObject.tag.Equals("Red")) // if the player collides with RedEnemy
+        else if (collision.gameObject.tag.Equals("BlueBullet") && gameObject.tag.Equals("Red")) // if the bullet from the Blue Player collides with a Red object, both are destroyed
         {
             Instantiate(particles, transform.position, transform.rotation);
             DestroyBlock(collision);
         }
-        else if ((collision.gameObject.tag.Equals("RedBullet") || collision.gameObject.tag.Equals("BlueBullet")) && gameObject.tag.Equals("Purple")) // if the player collides with PurpleEnemy
+        else if ((collision.gameObject.tag.Equals("RedBullet") || collision.gameObject.tag.Equals("BlueBullet")) && gameObject.tag.Equals("Purple")) // if a bullet from the Red or Blue Player collides with a Purple object, both are destroyed
         {
             Instantiate(particles, transform.position, transform.rotation);
             DestroyBlock(collision);
