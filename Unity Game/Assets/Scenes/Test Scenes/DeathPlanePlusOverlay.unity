@@ -4568,7 +4568,7 @@ PrefabInstance:
       objectReference: {fileID: 2603774}
     - target: {fileID: 6903374217119639342, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
       propertyPath: m_Name
-      value: Level Canvas
+      value: Level Management
       objectReference: {fileID: 0}
     - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
       propertyPath: m_Pivot.x
