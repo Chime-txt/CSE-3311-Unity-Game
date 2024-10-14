@@ -32,4 +32,13 @@ public class ChangeSceneScript : MonoBehaviour
 		// Loads the same level using the build index
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
+
+	// This function is dedicated to the Quit UI button which quits the application
+	// To trigger this function, the Quit button has to be pressed and then selected
+	// before the game closes
+	public void QuitGame()
+	{
+		Debug.Log("Quitting Game...");
+		Application.Quit();
+	}
 }
