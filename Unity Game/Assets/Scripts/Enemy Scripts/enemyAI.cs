@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class enemyAI: MonoBehaviour
 {
-    public Transform target;
+    public Transform player1, player2;
+    private Transform target;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     [SerializeField] public float stoppingDistance =10f;
@@ -22,7 +23,7 @@ public class enemyAI: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        // target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,6 +32,7 @@ public class enemyAI: MonoBehaviour
     }
     void UpdatePath()
     {
+        SwitchTarget();
         seeker.StartPath(rb.position, target.position, OnPathComplete);
 
     }
@@ -49,6 +51,21 @@ public class enemyAI: MonoBehaviour
         RetreatOrForward();
         FlipEnemy();
 
+    }
+    private void SwitchTarget()
+    {
+        float distanceToPlayer1 = Vector2.Distance(transform.position, player1.position);
+        float distanceToPlayer2 = Vector2.Distance(transform.position, player2.position);
+
+        // Set target to the closer player
+        if (distanceToPlayer1 < distanceToPlayer2)
+        {
+            target = player1;
+        }
+        else
+        {
+            target = player2;
+        }
     }
 
     private void RetreatOrForward()
