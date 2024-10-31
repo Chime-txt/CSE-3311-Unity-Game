@@ -7571,6 +7571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6195493583055923064, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: AmmoCount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8039413594043138224, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.838

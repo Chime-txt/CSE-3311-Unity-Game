@@ -12,7 +12,7 @@ public class playerShoot : MonoBehaviour
 	public Transform shootingPoint;
 	public GameObject bulletPrefab;
 	// [SerializeField] float bulletLifetime = 5f;
-	public float speed;
+	public int AmmoCount;
 
 	// Update is called once per frame
 	void Update()
@@ -25,8 +25,13 @@ public class playerShoot : MonoBehaviour
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
-				// Destroy(bullet, 5f);
-			}
+                AmmoCount--;
+                if (AmmoCount == 0)
+                {
+					enabled = false;
+                }
+                // Destroy(bullet, 5f);
+            }
 		}
 		if (gameObject.tag.Equals("Blue"))
 		{
@@ -35,7 +40,12 @@ public class playerShoot : MonoBehaviour
 			{
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
-				bulletScript.SetPlayer(gameObject);
+                AmmoCount--;
+                if (AmmoCount == 0)
+                {
+                    enabled = false;
+                }
+                bulletScript.SetPlayer(gameObject);
 				// Destroy(bullet, 5f);
 			}
 		}
