@@ -17,6 +17,9 @@ TagManager:
   - Button
   - UI Buttons
   - Ground
+  - Death Planes
+  - RedGem
+  - BlueGem
   layers:
   - Default
   - TransparentFX

@@ -3,59 +3,50 @@ using System.Collections;
 
 public class PortalCheck : MonoBehaviour
 {
-    // Indicates whether this is the red portal
-    public bool isRedPortal = false;
+    public bool isRedPortal = false; // Set this to true only for the Red Portal
+    public bool isBluePortal = false; // Set this to true only for the Blue Portal
 
-    // Reference to the other portal's script
     public PortalCheck otherPortalCheck;
-
-    // GameObject that will display the "Level Complete" message
     public GameObject levelCompleteMessage;
-
-    // Animator components for the red and blue players to trigger fade-out animations
     public Animator redPlayerAnimator;
     public Animator bluePlayerAnimator;
+    public LevelManagerScript levelManager;
 
-    // Static variables to track whether each player has completed the fade-out animation
     private static bool redPlayerFaded = false;
     private static bool bluePlayerFaded = false;
-
-    // Ensures the level is completed only once
     private static bool hasLevelCompleted = false;
+    private float deathDelay = 1.4f; // Delay before the player is destroyed
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // If the red player enters the red portal and has not yet faded out
-        if (isRedPortal && collision.gameObject.tag.Equals("Red") && !redPlayerFaded)
+        // Check if the Red Player enters the Red Portal
+        if (isRedPortal && collision.CompareTag("Red") && !redPlayerFaded)
         {
-            // Trigger red player's fade-out animation
             redPlayerAnimator.SetTrigger("Fadeout");
-
-            // Start coroutine to wait for fade-out animation to complete
             StartCoroutine(FadeOutPlayer("Red"));
         }
-
-        // If the blue player enters the blue portal and has not yet faded out
-        else if (!isRedPortal && collision.gameObject.tag.Equals("Blue") && !bluePlayerFaded)
+        // Check if the Blue Player enters the Blue Portal
+        else if (isBluePortal && collision.CompareTag("Blue") && !bluePlayerFaded)
         {
-            // Trigger blue player's fade-out animation
             bluePlayerAnimator.SetTrigger("Fadeout");
-
-            // Start coroutine to wait for fade-out animation to complete
             StartCoroutine(FadeOutPlayer("Blue"));
+        }
+        // Wrong player enters the portal - trigger death actions
+        else if (isRedPortal && collision.CompareTag("Blue")) // Blue player enters Red portal
+        {
+            TriggerDeath(collision.gameObject);
+        }
+        else if (isBluePortal && collision.CompareTag("Red")) // Red player enters Blue portal
+        {
+            TriggerDeath(collision.gameObject);
         }
     }
 
-    // Function to handle player fade-out
-    private IEnumerator FadeOutPlayer(string playerTag)
+    private IEnumerator FadeOutPlayer(string playerTag) // Player fade out animation
     {
-        // Duration of the fade-out animation
         float fadeOutDuration = 1.0f;
-
-        // Wait for animation to finish
         yield return new WaitForSeconds(fadeOutDuration);
 
-        // Set the respective player's faded flag to true
         if (playerTag == "Red")
         {
             redPlayerFaded = true;
@@ -65,12 +56,10 @@ public class PortalCheck : MonoBehaviour
             bluePlayerFaded = true;
         }
 
-        // Check if both players have faded out and trigger level completion
         CheckLevelCompletion();
     }
 
-    // Function to check if both players have faded out and complete the level
-    private void CheckLevelCompletion()
+    private void CheckLevelCompletion() // Check if players have faded after entering portal, triggering level complete message
     {
         if (redPlayerFaded && bluePlayerFaded && !hasLevelCompleted)
         {
@@ -78,17 +67,38 @@ public class PortalCheck : MonoBehaviour
         }
     }
 
-    // Function to handle the completion of the level
-    private void CompleteLevel()
+    private void CompleteLevel() // Display level complete message
     {
-        // Set the flag to indicate the level is completed
         hasLevelCompleted = true;
         Debug.Log("Level 1 complete!");
 
-        // Activate the level complete message
-        if (levelCompleteMessage != null)
-        {
-            levelCompleteMessage.SetActive(true);
-        }
+        levelCompleteMessage.SetActive(true);
+      
+    }
+
+    private void TriggerDeath(GameObject player)
+    {
+        Debug.Log(player.name + " entered the wrong portal and died!");
+
+        // Get the Animator and Movement components from the player
+        Animator playerAnimator = player.GetComponent<Animator>();
+        playerMovement playerMove = player.GetComponent<playerMovement>();
+
+        // Trigger the death animation
+        playerAnimator.SetBool("isDead", true);
+
+        // Disable player movement
+        playerMove.isAbleToMove = false;
+  
+
+        // Destroy the player GameObject after the delay
+        StartCoroutine(DestroyPlayer(player, deathDelay));
+    }
+
+    private IEnumerator DestroyPlayer(GameObject player, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(player); // Destroy the player GameObject after the delay
+        levelManager.gameOver();
     }
 }
