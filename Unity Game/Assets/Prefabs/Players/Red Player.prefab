@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 78812814761497541}
   - component: {fileID: 6195493583055923064}
   - component: {fileID: 906656915460700229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red Player
   m_TagString: Red
   m_Icon: {fileID: 0}
@@ -253,7 +253,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallCheck: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isOnGround: 1
+  isAgainstWall: 1
   isAbleToMove: 1
   speed: 5
   jumpingPower: 11.3
@@ -300,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2283758283078608679}
   bulletPrefab: {fileID: 4665605975415529816, guid: 5d39fb55b9951fd428b1676c808936ea, type: 3}
-  speed: 0
+  AmmoCount: 0
 --- !u!95 &906656915460700229
 Animator:
   serializedVersion: 5
@@ -331,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3711209931083593313}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2283758283078608679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}

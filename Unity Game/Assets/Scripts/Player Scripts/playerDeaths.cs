@@ -5,14 +5,14 @@ using UnityEngine;
 public class playerDeaths : MonoBehaviour
 {
 	[SerializeField] float timeTillDeath = 1.4f;
-	public Animator animator;
-	playerMovement playerMove;
+	[SerializeField] Animator animator;
+	[SerializeField] playerMovement playerMove;
 
 	// Death planes
 	[SerializeField] GameObject deathPlanes;
 
 	// The level manager controls the UI elements
-	public LevelManagerScript levelManager;
+	[SerializeField] LevelManagerScript levelManager;
 
 	// Start is called before the first frame update
 	void Start()
@@ -42,45 +42,39 @@ public class playerDeaths : MonoBehaviour
 	// To trigger this function, the player has to enter the death plane
 	private void OnTriggerEnter2D(Collider2D trigger)
 	{
-        // If player enters the Death Planes, kill the player
-        if (trigger.CompareTag("Death Planes"))
+		// If player enters the Death Planes, kill the player
+		if (trigger.CompareTag("Death Planes"))
 		{
 			Debug.Log("Player Died By Death Plane");
 			KillPlayer();
 		}
 	}
 
-    // This function kills the current player and triggers the game over screen
-    // To trigger this function, the player has to collide with other enemies of different colors
-    private void KillPlayer()
-    {
-        Debug.Log("A Player Is Dead");
-
-        // Disable player movement
-        playerMove.isAbleToMove = false;
-
-        // Call a coroutine to play the death animation 
-        StartCoroutine(DeathAnimation());
-
-        IEnumerator DeathAnimation()
-        {
-            // Play the character death animation
-            animator.SetBool("isDead", true);
-    
-            // Waits for the current player to finish its death animation
-            yield return new WaitForSeconds(timeTillDeath);
-
-            // Destroys the character
-            Destroy(gameObject);
-
-            // Trigger the game over function
-            levelManager.gameOver();
-        }
-    }
-
-	// Update is called once per frame
-	void Update()
+	// This function kills the current player and triggers the game over screen
+	// To trigger this function, the player has to collide with other enemies of different colors
+	private void KillPlayer()
 	{
-		
+		Debug.Log("A Player Is Dead");
+
+		// Disable player movement
+		playerMove.isAbleToMove = false;
+
+		// Call a coroutine to play the death animation 
+		StartCoroutine(DeathAnimation());
+
+		IEnumerator DeathAnimation()
+		{
+			// Play the character death animation
+			animator.SetBool("isDead", true);
+	
+			// Waits for the current player to finish its death animation
+			yield return new WaitForSeconds(timeTillDeath);
+
+			// Destroys the character
+			Destroy(gameObject);
+
+			// Trigger the game over function
+			levelManager.gameOver();
+		}
 	}
 }

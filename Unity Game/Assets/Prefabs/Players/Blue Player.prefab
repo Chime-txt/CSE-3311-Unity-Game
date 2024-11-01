@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62733568337469666}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4334466329420251455}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 1361295335012559135}
   - component: {fileID: 3052680265807090114}
   - component: {fileID: 8910177661878614681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blue Player
   m_TagString: Blue
   m_Icon: {fileID: 0}
@@ -315,7 +315,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallCheck: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isOnGround: 1
+  isAgainstWall: 1
   isAbleToMove: 1
   speed: 5
   jumpingPower: 11.3

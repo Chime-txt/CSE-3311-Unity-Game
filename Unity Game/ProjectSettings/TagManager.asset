@@ -20,6 +20,7 @@ TagManager:
   - Death Planes
   - RedGem
   - BlueGem
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Players
+  - Wall
   - 
   - 
   - 
