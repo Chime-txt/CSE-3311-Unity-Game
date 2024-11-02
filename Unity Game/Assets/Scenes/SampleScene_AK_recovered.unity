@@ -819,6 +819,10 @@ PrefabInstance:
       propertyPath: bluePlayerAnimator
       value: 
       objectReference: {fileID: 669594619}
+    - target: {fileID: 5846736362147046697, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: playersObject
+      value: 
+      objectReference: {fileID: 530183893}
     - target: {fileID: 6903374217119639342, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
       propertyPath: m_Name
       value: Level Management
@@ -2371,6 +2375,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 312347560}
     - target: {fileID: 4203143820135092560, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 703055287}
+    - target: {fileID: 4203143820135092560, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
       propertyPath: otherPortalCheck
       value: 
       objectReference: {fileID: 312347560}
@@ -2515,6 +2523,14 @@ PrefabInstance:
       propertyPath: portalCheck
       value: 
       objectReference: {fileID: 1637559712}
+    - target: {fileID: 2675958280192997956, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
+      propertyPath: isBluePortal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675958280192997956, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 703055287}
     - target: {fileID: 2675958280192997956, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: otherPortalCheck
       value: 
