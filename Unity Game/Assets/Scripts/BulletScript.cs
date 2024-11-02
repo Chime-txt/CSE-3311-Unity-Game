@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
 
     private GameObject player;
     [SerializeField] float bulletLifeTime = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,6 @@ public class BulletScript : MonoBehaviour
 
         // Destroy the bullet after a set time
         Destroy(gameObject, bulletLifeTime);
-
-        
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

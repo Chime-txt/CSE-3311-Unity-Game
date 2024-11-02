@@ -5,8 +5,6 @@ using UnityEngine;
 public class LinkedPressurePlatesScript : MonoBehaviour
 {
     // This script can link two different pressure plates together via a counter.
-    [SerializeField] GameObject PlateA;
-    [SerializeField] GameObject PlateB;
 
     private int noPlayersOnPressurePlate;
 
@@ -14,6 +12,8 @@ public class LinkedPressurePlatesScript : MonoBehaviour
 	{
         noPlayersOnPressurePlate = 0;
 	}
+
+    // Add the number of players standing on the linked pressure plates
 	public int addToNoPlayers()
     {
         noPlayersOnPressurePlate++;
@@ -21,7 +21,8 @@ public class LinkedPressurePlatesScript : MonoBehaviour
 		return noPlayersOnPressurePlate;
     }
 
-    public int subToNoPlayers()
+	// Subtract the number of players standing on the linked pressure plates
+	public int subToNoPlayers()
     {
         noPlayersOnPressurePlate--;
 		return noPlayersOnPressurePlate;
