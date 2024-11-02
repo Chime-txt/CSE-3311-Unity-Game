@@ -117,7 +117,7 @@ public class LevelManagerScript : MonoBehaviour
 	// This function sets the game speed when necessary
 	// To trigger this function, it requires the user to trigger the game over screen
 	// or trigger the pause menu overlay (or start the level, which is redundant)
-	protected void setGameSpeed(int gameSpeed)
+	protected static void setGameSpeed(int gameSpeed)
 	{
 		Time.timeScale = gameSpeed;
 	}

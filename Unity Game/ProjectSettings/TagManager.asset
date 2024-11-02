@@ -20,7 +20,11 @@ TagManager:
   - Death Planes
   - RedGem
   - BlueGem
-  - Wall
+  - RedButton
+  - BlueButton
+  - ButtonActivatesObjects
+  - ButtonDeactivatesObjects
+  - ButtonDestroysObjects
   layers:
   - Default
   - TransparentFX
@@ -30,7 +34,7 @@ TagManager:
   - UI
   - Ground
   - Players
-  - Wall
+  - 
   - 
   - 
   - 

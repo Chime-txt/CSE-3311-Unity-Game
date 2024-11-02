@@ -15,7 +15,6 @@ public class PressurePlateScript : MonoBehaviour
 	void Start()
 	{
 		noPlayersOnPressurePlate = 0;
-		InteractableObjects.SetActive(false);
 		gameObject.GetComponent<Renderer>().enabled = true;
 	}
 
@@ -35,18 +34,22 @@ public class PressurePlateScript : MonoBehaviour
 			{
 				noPlayersOnPressurePlate++;
 			}
-			// Then check if there is one player on the pressure plate
+
+			// Check if there is only one player when one or more players enters the pressure plate
 			if (noPlayersOnPressurePlate == 1)
 			{
 				Debug.Log("Activated Pressure Plate");
+
+				// Disable the Sprite Renderer for the trigger pressure plate
 				gameObject.GetComponent<Renderer>().enabled = false;
-				if (InteractableObjects != null)
-					InteractableObjects.SetActive(true);
+
+				// Switch between states depending on the object
+				SwitchActiveState(InteractableObjects);
 			}
-        }
+		}
     }
 
-	// other.gameObject.tag.Equals("Blue")
+	// Function that checks if one or both players has left the pressure plate
 	private void OnTriggerExit2D(Collider2D other)
 	{
 		// Check if one player has left the pressure plate
@@ -63,20 +66,35 @@ public class PressurePlateScript : MonoBehaviour
 			{
 				noPlayersOnPressurePlate--;
 			}
+
 			// Then check if no players are on the pressure plate
 			if (noPlayersOnPressurePlate == 0)
 			{
 				Debug.Log("Deactivated Pressure Plate");
 				gameObject.GetComponent<Renderer>().enabled = true;
-				if (InteractableObjects != null)
-					InteractableObjects.SetActive(false);
+				SwitchActiveState(InteractableObjects);
 			}
 			else
 			{
 				Debug.Log("Still Active Pressure Plate");
 				gameObject.GetComponent<Renderer>().enabled = false;
-				if (InteractableObjects != null)
-					InteractableObjects.SetActive(true);
+				SwitchActiveState(InteractableObjects);
+			}
+		}
+	}
+
+	private static void SwitchActiveState(GameObject InteractableObjects)
+	{
+		// Check if the object exists
+		if (InteractableObjects != null)
+		{
+			if (InteractableObjects.activeSelf)
+			{
+				InteractableObjects.SetActive(false);
+			}
+			else if (!InteractableObjects.activeSelf)
+			{
+				InteractableObjects.SetActive(true);
 			}
 		}
 	}
