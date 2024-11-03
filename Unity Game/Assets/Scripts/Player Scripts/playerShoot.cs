@@ -11,11 +11,17 @@ public class playerShoot : MonoBehaviour
 {
 	public Transform shootingPoint;
 	public GameObject bulletPrefab;
+	public ammoBar ammoBar;
 	// [SerializeField] float bulletLifetime = 5f;
 	public int AmmoCount;
 
-	// Update is called once per frame
-	void Update()
+
+    private void Start()
+    {
+		ammoBar.SetMaxAmmo(AmmoCount);
+    }
+    // Update is called once per frame
+    void Update()
 	{
 		if (gameObject.tag.Equals("Red")) 
 		{
@@ -26,6 +32,7 @@ public class playerShoot : MonoBehaviour
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
                 AmmoCount--;
+				ammoBar.SetAmmo(AmmoCount);
                 if (AmmoCount == 0)
                 {
 					enabled = false;
@@ -41,6 +48,7 @@ public class playerShoot : MonoBehaviour
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
                 AmmoCount--;
+                ammoBar.SetAmmo(AmmoCount);
                 if (AmmoCount == 0)
                 {
                     enabled = false;
