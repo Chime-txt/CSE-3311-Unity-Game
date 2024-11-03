@@ -6,23 +6,16 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] Transform groundCheck;
 	[SerializeField] LayerMask groundLayer;
+	[SerializeField] float speed = 8f;
+	[SerializeField] float jumpingPower = 16f;
+	[SerializeField] Animator animator;
+
 #pragma warning disable CA1051 // Do not declare visible instance fields
 	public bool isOnGround = true;
 	public bool isAbleToMove = true;
 #pragma warning restore CA1051 // Do not declare visible instance fields
-
 	private float horizontal;
-	[SerializeField] float speed = 8f;
-	[SerializeField] float jumpingPower = 16f;
 	private bool isFacingRight = true;
-
-	[SerializeField] Animator animator;
-
-	void Update()
-	{
-		FlipMethod();
-		IsGrounded(); // Continuously check if on ground
-	}
 
 	private void FlipMethod()
 	{
@@ -38,7 +31,12 @@ public class playerMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // Ensures smooth physics
+		if (isAbleToMove)
+		{
+			FlipMethod();
+			IsGrounded(); // Continuously check if on ground
+			rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // Ensures smooth physics
+		}
 	}
 
 	public void Jump(InputAction.CallbackContext context)
@@ -58,7 +56,7 @@ public class playerMovement : MonoBehaviour
 				animator.SetBool("isJumping", false);
 			}
 		}
-}
+	}
 
 	private bool IsGrounded()
 	{
@@ -100,5 +98,4 @@ public class playerMovement : MonoBehaviour
 			horizontal = 0f; // If player is unable to move don't move the player
 		}
 	}
-
 }

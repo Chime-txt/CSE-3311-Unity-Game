@@ -4,8 +4,6 @@ public class PlayerPlatformSync : MonoBehaviour
 {
     private Transform originalParent; // Store the player's original parent
 
-
-
     /*
      * The reason for this script is because the if the player were to land on a moving platform and that platforms begins to move 
      * the player will not because the movingPlatform script moves itself only. By making the player a child of the platform they will

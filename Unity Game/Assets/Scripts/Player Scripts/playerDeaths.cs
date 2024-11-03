@@ -7,6 +7,7 @@ public class playerDeaths : MonoBehaviour
 	[SerializeField] float timeTillDeath = 1.4f;
 	[SerializeField] Animator animator;
 	[SerializeField] playerMovement playerMove;
+	[SerializeField] Rigidbody2D rb;
 
 	// Death planes
 	[SerializeField] GameObject deathPlanes;
@@ -14,27 +15,40 @@ public class playerDeaths : MonoBehaviour
 	// The level manager controls the UI elements
 	[SerializeField] LevelManagerScript levelManager;
 
+	// Lock the collision before players are about to die
+	private bool deathLock;
+
 	// Start is called before the first frame update
 	void Start()
 	{
+		deathLock = false;
 		playerMove = GetComponent<playerMovement>();
 	}
 
 	// This function detects whether the player has collided with any enemy type before killing the player
-	// To trigger this function, the player has to touch the enemy of a different color
+	// To trigger this function, the player has to touch the enemy of a different color or the other player
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag.Equals("RedEnemy") && gameObject.tag.Equals("Blue") )// If the player collides with RedEnemy
+		// Check if the death lock is not being used
+		if (!deathLock)
 		{
-			KillPlayer();
-		}
-		else if (collision.gameObject.tag.Equals("BlueEnemy") && gameObject.tag.Equals("Red")) // If the player collides with RedEnemy
-		{
-			KillPlayer();
-		}
-		else if (collision.gameObject.tag.Equals("Purple")) // If the player collides with PurpleEnemy
-		{
-			KillPlayer();
+			if (collision.gameObject.tag.Equals("Purple")) // If the player collides with PurpleEnemy
+			{
+				LockKillPlayer();
+			}
+			else if ((collision.gameObject.tag.Equals("Blue") && gameObject.tag.Equals("Red"))
+				|| (collision.gameObject.tag.Equals("Red") && gameObject.tag.Equals("Blue"))) // If the players collide with each other
+			{
+				LockKillPlayer();
+			}
+			else if (collision.gameObject.tag.Equals("BlueEnemy") && gameObject.tag.Equals("Red")) // If the player collides with RedEnemy
+			{
+				LockKillPlayer();
+			}
+			else if (collision.gameObject.tag.Equals("RedEnemy") && gameObject.tag.Equals("Blue"))// If the player collides with RedEnemy
+			{
+				LockKillPlayer();
+			}
 		}
 	}
 
@@ -42,10 +56,31 @@ public class playerDeaths : MonoBehaviour
 	// To trigger this function, the player has to enter the death plane
 	private void OnTriggerEnter2D(Collider2D trigger)
 	{
-		// If player enters the Death Planes, kill the player
-		if (trigger.CompareTag("Death Planes"))
+		// Check if the death lock is not being used
+		if (!deathLock)
 		{
-			Debug.Log("Player Died By Death Plane");
+			// If player enters the Death Planes, kill the player
+			if (trigger.CompareTag("Death Planes"))
+			{
+				Debug.Log("Player Died By Death Plane");
+				LockKillPlayer();
+			}
+		}
+	}
+
+	// This function takes the lock to prevent other functions with collisions from running
+	// To run this function, the player must first collide with an enemy or another player
+	// or go out of bounds and trigger a death plane
+	private void LockKillPlayer()
+	{
+		// Check if the death lock is not being used
+		if (!deathLock)
+		{
+			// Lock the code immediately before safely executing the rest of the code
+			deathLock = true;
+			Debug.Log(gameObject + " Death Lock = " + deathLock);
+			
+			// Then kill the player safely
 			KillPlayer();
 		}
 	}
@@ -56,8 +91,9 @@ public class playerDeaths : MonoBehaviour
 	{
 		Debug.Log("A Player Is Dead");
 
-		// Disable player movement
+		// Disable all player movement
 		playerMove.isAbleToMove = false;
+		rb.velocity = new Vector2(0.0f, 0.0f);
 
 		// Call a coroutine to play the death animation 
 		StartCoroutine(DeathAnimation());

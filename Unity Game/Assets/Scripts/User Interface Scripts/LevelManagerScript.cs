@@ -28,12 +28,6 @@ public class LevelManagerScript : MonoBehaviour
 		Debug.Log("> Level Start");
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		
-	}
-
 	// FixedUpdate is called once per a fixed amount of frames
 	private void FixedUpdate()
 	{
@@ -69,8 +63,11 @@ public class LevelManagerScript : MonoBehaviour
 			// Pause in-game speed (0)
 			setGameSpeed(0);
 
-			// Disable one or both players (if present) in the Players Object
-			playersObject.SetActive(false);
+			if (playersObject.gameObject != null)
+			{
+				// Disable one or both players (if present) in the Players Object
+				playersObject.SetActive(false);
+			}
 
 			// Enable the pause menu and disable the in-game pause button
 			pauseMenuUI.SetActive(true);
@@ -83,8 +80,11 @@ public class LevelManagerScript : MonoBehaviour
 			// Resume in-game speed (1)
 			setGameSpeed(1);
 
-			// Enable one or both players (if present) in the Players Object
-			playersObject.SetActive(true);
+			if (playersObject.gameObject != null)
+			{
+				// Enable one or both players (if present) in the Players Object
+				playersObject.SetActive(true);
+			}
 
 			// Disable the pause menu and enable the in-game pause button
 			pauseMenuUI.SetActive(false);

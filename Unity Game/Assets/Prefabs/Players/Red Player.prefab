@@ -253,11 +253,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  isOnGround: 1
-  isAbleToMove: 1
   speed: 5
   jumpingPower: 11.3
   animator: {fileID: 906656915460700229}
+  isOnGround: 1
+  isAbleToMove: 1
 --- !u!114 &2599237482822806243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +285,7 @@ MonoBehaviour:
   timeTillDeath: 1.4
   animator: {fileID: 906656915460700229}
   playerMove: {fileID: 149785408635341347}
+  rb: {fileID: 8173457748007210201}
   deathPlanes: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!114 &6195493583055923064

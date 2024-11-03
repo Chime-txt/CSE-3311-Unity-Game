@@ -16,7 +16,6 @@ public class enemyAI: MonoBehaviour
 
 	bool reachedEndOfPath;
 	int currentWaypoint;
-	
 
 	Seeker seeker;
 	Rigidbody2D rb;
@@ -51,7 +50,7 @@ public class enemyAI: MonoBehaviour
 		}
 	}
 
-	// Update is called once per frame
+	// FixedUpdate is called once every set amount of frames
 	void FixedUpdate()
 	{
 		// Check if the enemy object exists before executing the following functions
@@ -62,6 +61,7 @@ public class enemyAI: MonoBehaviour
 		}
 	}
 
+	// SwitchTarget will switch targets from one player to the other depending on who is closer.
 	private void SwitchTarget()
 	{
 		// Check if both players exists before executing the following functions that includes the players
