@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class leverScript : MonoBehaviour
 {
-    public bool canMovePlatforms;
+    public bool canCreatePlatforms;
     public bool canDestroyPlatforms;
     public bool isLeverActive = false;
 
@@ -18,6 +18,10 @@ public class leverScript : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = offLever;
+        if (canCreatePlatforms && canDestroyPlatforms)
+        {
+            Debug.LogError("ERROR: CAN ONLY HAVE ONE BOOL CHECKED OFF");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
