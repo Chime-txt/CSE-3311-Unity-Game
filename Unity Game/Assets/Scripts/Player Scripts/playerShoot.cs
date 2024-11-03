@@ -13,12 +13,14 @@ public class playerShoot : MonoBehaviour
 	public GameObject bulletPrefab;
 	public ammoBar ammoBar;
 	// [SerializeField] float bulletLifetime = 5f;
-	public int AmmoCount;
+	public int AmmoCount = 5;
+	public int maxAmmoCount = 5;
 
 
     private void Start()
     {
-		ammoBar.SetMaxAmmo(AmmoCount);
+		AmmoCount = maxAmmoCount;
+		ammoBar.SetMaxAmmo(maxAmmoCount);
     }
     // Update is called once per frame
     void Update()
