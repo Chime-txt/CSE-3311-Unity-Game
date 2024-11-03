@@ -5321,10 +5321,6 @@ PrefabInstance:
       propertyPath: ammoBar
       value: 
       objectReference: {fileID: 1748640335}
-    - target: {fileID: 6195493583055923064, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
-      propertyPath: AmmoCount
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8039413594043138224, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.26
@@ -8969,7 +8965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -175.47}
+  m_AnchoredPosition: {x: 165.88, y: -28.8}
   m_SizeDelta: {x: 354.1389, y: 51.257706}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1099032888
@@ -19417,7 +19413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -268}
+  m_AnchoredPosition: {x: 165.88, y: -122.8}
   m_SizeDelta: {x: 354.1389, y: 51.25769}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1748640335
@@ -19677,10 +19673,6 @@ PrefabInstance:
       propertyPath: ammoBar
       value: 
       objectReference: {fileID: 1099032888}
-    - target: {fileID: 3052680265807090114, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
-      propertyPath: maxAmmoCount
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4851051102394225124, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.37

@@ -302,7 +302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2283758283078608679}
   bulletPrefab: {fileID: 4665605975415529816, guid: 5d39fb55b9951fd428b1676c808936ea, type: 3}
-  AmmoCount: 0
+  ammoBar: {fileID: 0}
+  AmmoCount: 5
+  maxAmmoCount: 5
 --- !u!95 &906656915460700229
 Animator:
   serializedVersion: 5

@@ -20,7 +20,14 @@ public class playerShoot : MonoBehaviour
     private void Start()
     {
 		AmmoCount = maxAmmoCount;
-		ammoBar.SetMaxAmmo(maxAmmoCount);
+		if (ammoBar != null)
+		{
+			ammoBar.SetMaxAmmo(maxAmmoCount);
+		}
+		else
+		{
+			Debug.LogError("Please attack ammoBar Slider to playerShoot.cs script.");
+		}
     }
     // Update is called once per frame
     void Update()
@@ -34,7 +41,10 @@ public class playerShoot : MonoBehaviour
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
                 AmmoCount--;
-				ammoBar.SetAmmo(AmmoCount);
+				if (ammoBar)
+				{
+					ammoBar.SetAmmo(AmmoCount);
+				}
                 if (AmmoCount == 0)
                 {
 					enabled = false;
@@ -50,7 +60,10 @@ public class playerShoot : MonoBehaviour
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
                 AmmoCount--;
-                ammoBar.SetAmmo(AmmoCount);
+				if (ammoBar)
+				{
+	                ammoBar.SetAmmo(AmmoCount);
+				}
                 if (AmmoCount == 0)
                 {
                     enabled = false;
