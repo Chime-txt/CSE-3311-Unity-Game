@@ -78,7 +78,7 @@ public class playerDeaths : MonoBehaviour
 		{
 			// Lock the code immediately before safely executing the rest of the code
 			deathLock = true;
-			Debug.Log(gameObject + " Death Lock = " + deathLock);
+			Debug.Log(gameObject.name + " Death Lock = " + deathLock);
 			
 			// Then kill the player safely
 			KillPlayer();

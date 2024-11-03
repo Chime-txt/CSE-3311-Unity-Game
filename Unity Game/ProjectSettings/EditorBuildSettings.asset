@@ -15,17 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/DemoScene.unity
     guid: 1bd1fbc8ca67ffa43a91476b92d4039f
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/TargetButtonScene.unity
-    guid: b9844142fd97bc24985bd6ac7e394e65
-  - enabled: 0
-    path: Assets/Scenes/Test Scenes/TitlePlusButtonTestScene.unity
-    guid: cd963e362e9b4bd418913d7bf7add06d
+    path: Assets/Scenes/Test Scenes/ActivatePlatesScene.unity
+    guid: 65dba656c635d1f468afe0cbccf4e2b8
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/TargetLeverScene.unity
+    guid: f8ce1f82ba13bed48874896137e5f12f
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_AK_recovered.unity
+    guid: 5b2b6d40db269c641a44c7be5dbd358e
   - enabled: 0
     path: Assets/Scenes/TilemapTestScene.unity
     guid: afb57b417e1ad6741a2386fa4489dad9
-  - enabled: 0
-    path: Assets/Scenes/SampleScene_AK_recovered.unity
-    guid: 5b2b6d40db269c641a44c7be5dbd358e
   - enabled: 0
     path: Assets/Scenes/Test Scenes/DeathPlanePlusOverlay.unity
     guid: 1f87547e2bbd0434289b7b52fddb1b34

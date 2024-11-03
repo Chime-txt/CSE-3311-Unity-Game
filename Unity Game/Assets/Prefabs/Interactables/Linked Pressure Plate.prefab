@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d36d90b9df95b244a759b835921d68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlateA: {fileID: 5638893454690752843}
-  PlateB: {fileID: 3493166758690101780}
 --- !u!1001 &137432543682541816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,6 +61,18 @@ PrefabInstance:
     - target: {fileID: 3572052158761902828, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
       propertyPath: m_Name
       value: Pressure Plate B
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8235294
       objectReference: {fileID: 0}
     - target: {fileID: 5011057498891415054, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
       propertyPath: m_Name
@@ -112,16 +122,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pressure Plate Trigger B
       objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8235294
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
---- !u!1 &3493166758690101780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3572052158761902828, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
-  m_PrefabInstance: {fileID: 137432543682541816}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5882057057886663919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5785156919978052631, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
@@ -142,6 +159,18 @@ PrefabInstance:
     - target: {fileID: 3572052158761902828, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
       propertyPath: m_Name
       value: Pressure Plate A
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610657427019277087, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8235294
       objectReference: {fileID: 0}
     - target: {fileID: 5011057498891415054, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
       propertyPath: m_Name
@@ -191,6 +220,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pressure Plate Trigger A
       objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163782518660956901, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8235294
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -199,10 +240,5 @@ PrefabInstance:
 --- !u!4 &3430094381277444016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5785156919978052631, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
-  m_PrefabInstance: {fileID: 9210746601578281895}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5638893454690752843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3572052158761902828, guid: 91404063d5233104fb24d0c79dcd1675, type: 3}
   m_PrefabInstance: {fileID: 9210746601578281895}
   m_PrefabAsset: {fileID: 0}

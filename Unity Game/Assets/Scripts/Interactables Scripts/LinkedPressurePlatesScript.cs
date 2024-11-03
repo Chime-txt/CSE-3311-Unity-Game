@@ -17,7 +17,6 @@ public class LinkedPressurePlatesScript : MonoBehaviour
 	public int addToNoPlayers()
     {
         noPlayersOnPressurePlate++;
-
 		return noPlayersOnPressurePlate;
     }
 

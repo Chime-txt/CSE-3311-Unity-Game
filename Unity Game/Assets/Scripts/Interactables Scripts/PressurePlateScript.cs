@@ -77,8 +77,6 @@ public class PressurePlateScript : MonoBehaviour
 			else
 			{
 				Debug.Log("Still Active Pressure Plate");
-				gameObject.GetComponent<Renderer>().enabled = false;
-				SwitchActiveState(InteractableObjects);
 			}
 		}
 	}

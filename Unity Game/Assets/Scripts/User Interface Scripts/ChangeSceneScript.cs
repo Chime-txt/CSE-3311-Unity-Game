@@ -13,13 +13,20 @@ public class ChangeSceneScript : MonoBehaviour
 	// has to be pressed and then selected
 	public void ChangingScenes(string sceneName)
 	{
+		if (string.IsNullOrEmpty(sceneName))
+		{
+			// There was no level to load, instead, load main menu
+			Debug.Log("Scene name was not added to " + gameObject.name + "... Loading Main Menu...");
+			sceneName = "MainMenu";
+		}
+		
 		// Load any scene using scene name (uses one function and we can edit this value in Unity
 		// and ensures consistency)
 		SceneManager.LoadScene(sceneName);
-
+		
 		// Resume in-game speed (1)
 		Time.timeScale = 1;
-
+		
 		// For debugging purposes, we print the new scene name into the console
 		Debug.Log("Scene Changed To " + sceneName);
 	}

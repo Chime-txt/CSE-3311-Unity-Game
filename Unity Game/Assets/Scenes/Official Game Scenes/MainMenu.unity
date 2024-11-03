@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 481065505134543302, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_Name
-      value: Quit Game Text
+      value: Credits Text
       objectReference: {fileID: 0}
     - target: {fileID: 2087419847313776237, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_Name
@@ -1396,7 +1396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 481065505134543302, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_Name
-      value: Quit Game Text
+      value: Level Select Text
       objectReference: {fileID: 0}
     - target: {fileID: 2087419847313776237, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_Name

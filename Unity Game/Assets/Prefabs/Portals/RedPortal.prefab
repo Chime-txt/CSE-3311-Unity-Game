@@ -187,8 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3053e4b10df56446a959e76af7e17f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRedPortal: 0
+  isRedPortal: 1
+  isBluePortal: 0
   otherPortalCheck: {fileID: 0}
   levelCompleteMessage: {fileID: 0}
   redPlayerAnimator: {fileID: 3295469673205980478}
   bluePlayerAnimator: {fileID: 0}
+  levelManager: {fileID: 0}
