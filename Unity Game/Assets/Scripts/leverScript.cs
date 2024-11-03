@@ -28,9 +28,7 @@ public class leverScript : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Red") || other.gameObject.tag.Equals("Blue"))
         {
-
             ToggleLever();
-
         }
     }
 
@@ -40,7 +38,7 @@ public class leverScript : MonoBehaviour
         if (isLeverActive)
         {
             spriteRenderer.sprite = onLever;
-            if (canMovePlatforms = !terrainExists)
+            if (canCreatePlatforms = !terrainExists)
             {
                 currentTerrain = Instantiate(terrainGameObject, terrainLocation.position, Quaternion.identity);
                 terrainExists = true;
@@ -53,7 +51,7 @@ public class leverScript : MonoBehaviour
         else
         {
             spriteRenderer.sprite = offLever;
-            if (canMovePlatforms && terrainExists)
+            if (canCreatePlatforms && terrainExists)
             {
                 Destroy(currentTerrain);
                 terrainExists = false ;
