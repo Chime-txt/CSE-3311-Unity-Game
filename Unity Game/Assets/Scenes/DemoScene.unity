@@ -8793,6 +8793,14 @@ PrefabInstance:
       propertyPath: bluePlayerAnimator
       value: 
       objectReference: {fileID: 1687289860}
+    - target: {fileID: 820674540619135175, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723778488390720862, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5846736362147046697, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
       propertyPath: playersObject
       value: 
