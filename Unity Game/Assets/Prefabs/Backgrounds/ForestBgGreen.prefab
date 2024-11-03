@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835857135472076425}
   - component: {fileID: 5337558231214548948}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForestBgGreen_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94811049552527440}
   - component: {fileID: 5247356582882095060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForestBgGreen_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5204155506487181000}
   - component: {fileID: 6306500805720506997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForestBgGreen_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1398333904987369595}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForestBgGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}

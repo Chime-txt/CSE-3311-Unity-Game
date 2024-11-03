@@ -20,6 +20,7 @@ public class PlayerPlatformSync : MonoBehaviour
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
             Debug.Log("On a Platfrom");
+
             // Store the original parent of the player
             originalParent = transform.parent;
 
@@ -30,11 +31,15 @@ public class PlayerPlatformSync : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        // Check if the player is leaving the moving platform
-        if (collision.gameObject.CompareTag("MovingPlatform"))
+        // First check if the player is visible in the hierarchy
+        if (collision.gameObject.activeInHierarchy)
         {
-            // Detach the player from the platform and restore the original parent
-            transform.SetParent(originalParent);
+		    // Check if the player is leaving the moving platform
+		    if (collision.gameObject.CompareTag("MovingPlatform"))
+            {
+                // Detach the player from the platform and restore the original parent
+                transform.SetParent(originalParent);
+            }
         }
     }
 }

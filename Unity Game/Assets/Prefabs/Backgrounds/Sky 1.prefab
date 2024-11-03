@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8607668873184472924}
   - component: {fileID: 4727990515613173754}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sky1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436862424194220853}
   - component: {fileID: 5848054532993248699}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sky 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6222895782635852376}
   - component: {fileID: 8090422689910216075}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sky1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6805958572706476005}
   - component: {fileID: 8775980755250717282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SkySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

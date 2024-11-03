@@ -284,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTillDeath: 1.4
   animator: {fileID: 906656915460700229}
-  playerMove: {fileID: 0}
+  playerMove: {fileID: 149785408635341347}
   deathPlanes: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!114 &6195493583055923064
