@@ -6,10 +6,17 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
 {
+    [SerializeField] private float StunTime = 5f;
+    private bool isStun = false;
+    private Rigidbody2D rb;
+    private flipEnemy flipEnemyScript;
+    private OscillatingPlatform oscillatingPlatformScript;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        flipEnemyScript = GetComponent<flipEnemy>();
+        oscillatingPlatformScript = GetComponent<OscillatingPlatform>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,23 +24,62 @@ public class BulletCollision : MonoBehaviour
         if (collision.gameObject.tag.Equals("RedBullet") && gameObject.tag.Equals("BlueEnemy"))// if the bullet from the Red Player collides with a BlueEnemy, both are destroyed
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            StartCoroutine(Stun());
         }
         else if (collision.gameObject.tag.Equals("BlueBullet") && gameObject.tag.Equals("RedEnemy")) // if the bullet from the Blue Player collides with a RedEnemy, both are destroyed
         {
             {
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                StartCoroutine(Stun());
             }
         }
         else if ((collision.gameObject.tag.Equals("RedBullet") || collision.gameObject.tag.Equals("BlueBullet")) && gameObject.tag.Equals("Purple")) // if a bullet from the Red or Blue Player collides with a Purple enemy, both are destroyed
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            StartCoroutine(Stun());
         }
+    }
+    private IEnumerator Stun()
+    {
+        if (!isStun)
+        {
+            isStun = true;
+
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            Vector3 currentPosition = transform.position;
+            // Disable movement script
+            if (flipEnemyScript != null)
+            {
+                flipEnemyScript.enabled = false;
+            }
+            if (oscillatingPlatformScript != null)
+            {
+                oscillatingPlatformScript.enabled = false;
+            }
+            // Wait for the stun duration
+            yield return new WaitForSeconds(StunTime);
+
+            // Re-enable movement script
+            if (flipEnemyScript != null)
+            {
+                flipEnemyScript.enabled = true;
+            }
+            if (oscillatingPlatformScript != null)
+            {
+                oscillatingPlatformScript.enabled = true;
+            }
+
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            
+            transform.position = currentPosition;
+
+            isStun = false;
         }
-        // Update is called once per frame
-        void Update()
+    }
+    // Update is called once per frame
+    void Update()
         {
 
         }

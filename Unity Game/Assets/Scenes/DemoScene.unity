@@ -1247,6 +1247,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1847804309}
     m_Modifications:
+    - target: {fileID: 2857892676214431234, guid: 756864932703fcc4c9da1698b7144961, type: 3}
+      propertyPath: movementRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629877183205620052, guid: 756864932703fcc4c9da1698b7144961, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5629877183205620052, guid: 756864932703fcc4c9da1698b7144961, type: 3}
       propertyPath: m_GravityScale
       value: 1.5
@@ -1294,6 +1302,14 @@ PrefabInstance:
     - target: {fileID: 5662188916758223248, guid: 756864932703fcc4c9da1698b7144961, type: 3}
       propertyPath: m_Name
       value: RunningBandit Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907000975969085113, guid: 756864932703fcc4c9da1698b7144961, type: 3}
+      propertyPath: StunTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502402625185029487, guid: 756864932703fcc4c9da1698b7144961, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7926,6 +7942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6195493583055923064, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: AmmoCount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8039413594043138224, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.944351
@@ -8924,7 +8944,7 @@ GameObject:
   - component: {fileID: 2048607689}
   m_Layer: 6
   m_Name: Ground Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
