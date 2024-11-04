@@ -713,7 +713,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 167929350}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 746c3df21c8f5fb4f9f3fc148ae9a833, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7186,7 +7186,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1135079391}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 746c3df21c8f5fb4f9f3fc148ae9a833, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7566,6 +7566,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7722840445224383132, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
@@ -8265,7 +8277,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 2045738995}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 746c3df21c8f5fb4f9f3fc148ae9a833, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8654,7 +8666,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 2048607687}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 746c3df21c8f5fb4f9f3fc148ae9a833, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
