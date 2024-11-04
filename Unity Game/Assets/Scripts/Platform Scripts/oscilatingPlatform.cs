@@ -12,6 +12,8 @@ public class OscillatingPlatform : MonoBehaviour
     // Frequency: Speed of the oscillation
     [SerializeField] float frequency = 1.0f;
 
+    public bool isMoving = true;
+
     void Start()
     {
         // Store the initial position of the platform
@@ -20,17 +22,20 @@ public class OscillatingPlatform : MonoBehaviour
 
     void Update()
     {
-        // Calculate the new position using Mathf.Sin
-        float oscillation = Mathf.Sin(Time.time * frequency) * amplitude;
+        if (isMoving)
+        {
+            // Calculate the new position using Mathf.Sin
+            float oscillation = Mathf.Sin(Time.time * frequency) * amplitude;
 
-        // Apply the oscillation to the platform's position 
-        if (isXAxis)
-        {
-            transform.position = new Vector2(startPosition.x + oscillation, startPosition.y);
-        }
-        else
-        {
-            transform.position = new Vector2(startPosition.x, startPosition.y + oscillation);
+            // Apply the oscillation to the platform's position 
+            if (isXAxis)
+            {
+                transform.position = new Vector2(startPosition.x + oscillation, startPosition.y);
+            }
+            else
+            {
+                transform.position = new Vector2(startPosition.x, startPosition.y + oscillation);
+            }
         }
     }
 }

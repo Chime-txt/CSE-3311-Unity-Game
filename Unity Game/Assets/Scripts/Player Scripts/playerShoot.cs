@@ -25,9 +25,9 @@ public class playerShoot : MonoBehaviour
 			ammoBar.SetMaxAmmo(maxAmmoCount);
 		}
 		else
-		{
-			Debug.LogError("Please attack ammoBar Slider to playerShoot.cs script.");
-		}
+        {
+            Debug.LogError("Please attack ammoBar Slider to playerShoot.cs script.");
+        }
     }
     // Update is called once per frame
     void Update()

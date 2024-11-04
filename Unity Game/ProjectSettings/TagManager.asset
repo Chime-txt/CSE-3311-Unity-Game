@@ -25,6 +25,7 @@ TagManager:
   - ButtonActivatesObjects
   - ButtonDeactivatesObjects
   - ButtonDestroysObjects
+  - Stunned
   layers:
   - Default
   - TransparentFX

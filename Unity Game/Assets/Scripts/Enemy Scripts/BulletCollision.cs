@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Permissions;
+using TMPro;
 using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
@@ -11,12 +12,17 @@ public class BulletCollision : MonoBehaviour
     private Rigidbody2D rb;
     private flipEnemy flipEnemyScript;
     private OscillatingPlatform oscillatingPlatformScript;
+    private string originalTag;
+    private BoxCollider2D boxCollider;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         flipEnemyScript = GetComponent<flipEnemy>();
         oscillatingPlatformScript = GetComponent<OscillatingPlatform>();
+        originalTag = gameObject.tag;
+        boxCollider = GetComponent<BoxCollider2D>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,18 +51,32 @@ public class BulletCollision : MonoBehaviour
         {
             isStun = true;
 
+
+            // Stun enemy movement
             rb.velocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-            Vector3 currentPosition = transform.position;
+            gameObject.tag = "Stunned";
+
+            Vector3 originalposition = transform.position;
+
             // Disable movement script
             if (flipEnemyScript != null)
             {
                 flipEnemyScript.enabled = false;
             }
-            if (oscillatingPlatformScript != null)
+            /*
+             if (oscillatingPlatformScript != null)
             {
-                oscillatingPlatformScript.enabled = false;
+                oscillatingPlatformScript.isMoving = false;
             }
+            */
+
+            // Turn off collision
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = false;
+            }
+
             // Wait for the stun duration
             yield return new WaitForSeconds(StunTime);
 
@@ -65,15 +85,22 @@ public class BulletCollision : MonoBehaviour
             {
                 flipEnemyScript.enabled = true;
             }
+            /*
             if (oscillatingPlatformScript != null)
             {
-                oscillatingPlatformScript.enabled = true;
+                oscillatingPlatformScript.isMoving = true;
+            }
+            */
+            // Turn on collision
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = true;
             }
 
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            
-            transform.position = currentPosition;
+
+            gameObject.tag = originalTag;
 
             isStun = false;
         }
