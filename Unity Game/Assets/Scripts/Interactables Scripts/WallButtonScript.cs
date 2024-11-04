@@ -7,6 +7,8 @@ public class WallButtonScript : MonoBehaviour
 	// Get the object or object group that will interact with this single button
 	[SerializeField] GameObject InteractableObjects;
 
+	// If the object collides with the wall button, check if it is a bullet of the same color
+	// before doing a certain task with the button and deleting the button
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if ((gameObject.CompareTag("RedButton") && collision.gameObject.tag.Equals("RedBullet"))
@@ -33,7 +35,7 @@ public class WallButtonScript : MonoBehaviour
 		}
 	}
 
-	// Depending on the tag of the object, it will do certain actions
+	// Depending on the tag of the object, it will do certain actions on the object
 	private static void CheckObjectTags(GameObject InteractableObjects)
 	{
 		// Destroy the object if it has the ButtonDestroysObjects tag
@@ -59,6 +61,5 @@ public class WallButtonScript : MonoBehaviour
 			InteractableObjects.SetActive(false);
 			return;
 		}
-
 	}
 }

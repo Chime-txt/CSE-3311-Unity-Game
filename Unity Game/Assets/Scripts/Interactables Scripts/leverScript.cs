@@ -2,21 +2,23 @@ using UnityEngine;
 
 public class leverScript : MonoBehaviour
 {
-    public bool canCreatePlatforms;
-    public bool canDestroyPlatforms;
-    public bool isLeverActive = false;
+    [SerializeField] bool canCreatePlatforms;
+	[SerializeField] bool canDestroyPlatforms;
+	[SerializeField] bool isLeverActive = false;
 
-    public GameObject terrainGameObject;
-    public Transform terrainLocation;
+	[SerializeField] GameObject terrainGameObject;
+	[SerializeField] Transform terrainLocation;
 
-    public Sprite offLever, onLever;
+	[SerializeField] Sprite offLever, onLever;
     private SpriteRenderer spriteRenderer;
     private GameObject currentTerrain;
-    private bool terrainExists = false;
+    private bool terrainExists;
+
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        terrainExists = false;
+		spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = offLever;
         if (canCreatePlatforms && canDestroyPlatforms)
         {
@@ -24,6 +26,8 @@ public class leverScript : MonoBehaviour
         }
     }
 
+    // After an object collides with the lever, check if the collision is
+    // a player before calling another function to toggle the lever
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("Red") || other.gameObject.tag.Equals("Blue"))
@@ -32,6 +36,7 @@ public class leverScript : MonoBehaviour
         }
     }
 
+    // After the player collides with the lever, either spawn or delete the terrain
     private void ToggleLever()
     {
         isLeverActive = !isLeverActive;
@@ -57,11 +62,5 @@ public class leverScript : MonoBehaviour
                 terrainExists = false ;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

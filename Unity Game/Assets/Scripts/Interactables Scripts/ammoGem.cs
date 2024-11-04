@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class ammoGem : MonoBehaviour
@@ -10,11 +9,9 @@ public class ammoGem : MonoBehaviour
     public ammoBar blueAmmoBar;
     public playerShoot bluePlayerShoot;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Collect gem and refill ammo bar based on the player's tag
+    // Triggering this function requires the player to collect the white gem
+    // instead of their respective color gem.
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Red"))
@@ -32,6 +29,4 @@ public class ammoGem : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    
 }

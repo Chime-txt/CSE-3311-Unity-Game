@@ -26,11 +26,11 @@ public class playerShoot : MonoBehaviour
 		}
 		else
         {
-            Debug.LogError("Please attack ammoBar Slider to playerShoot.cs script.");
+            Debug.LogError("Please attach ammoBar Slider to playerShoot.cs script.");
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
 	{
 		if (gameObject.tag.Equals("Red")) 
 		{

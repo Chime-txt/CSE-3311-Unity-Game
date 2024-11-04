@@ -22,7 +22,6 @@ public class PortalCheck : MonoBehaviour
 		redPlayerFaded = false;
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
-
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -30,13 +29,13 @@ public class PortalCheck : MonoBehaviour
 		if (isRedPortal && collision.CompareTag("Red") && !redPlayerFaded)
 		{
 			redPlayerAnimator.SetTrigger("Fadeout");
-			StartCoroutine(FadeOutPlayer("Red"));
+			StartCoroutine(FadeOutPlayer("Red", collision));
 		}
 		// Check if the Blue Player enters the Blue Portal
 		else if (isBluePortal && collision.CompareTag("Blue") && !bluePlayerFaded)
 		{
 			bluePlayerAnimator.SetTrigger("Fadeout");
-			StartCoroutine(FadeOutPlayer("Blue"));
+			StartCoroutine(FadeOutPlayer("Blue", collision));
 		}
 		// Wrong player enters the portal - trigger death actions
 		else if (isRedPortal && collision.CompareTag("Blue")) // Blue player enters Red portal
@@ -49,7 +48,7 @@ public class PortalCheck : MonoBehaviour
 		}
 	}
 
-	private IEnumerator FadeOutPlayer(string playerTag) // Player fade out animation
+	private IEnumerator FadeOutPlayer(string playerTag, Collider2D collision) // Player fade out animation
 	{
 		float fadeOutDuration = 1.0f;
 		yield return new WaitForSeconds(fadeOutDuration);
@@ -62,6 +61,9 @@ public class PortalCheck : MonoBehaviour
 		{
 			bluePlayerFaded = true;
 		}
+
+		// Disable the Player who faded
+		collision.gameObject.SetActive(false);
 
 		CheckLevelCompletion();
 	}
@@ -77,7 +79,7 @@ public class PortalCheck : MonoBehaviour
 	private void CompleteLevel() // Display level complete message
 	{
 		hasLevelCompleted = true;
-		Debug.Log("Level 1 complete!");
+		Debug.Log("Level complete!");
 
 		levelCompleteMessage.SetActive(true);
 	  

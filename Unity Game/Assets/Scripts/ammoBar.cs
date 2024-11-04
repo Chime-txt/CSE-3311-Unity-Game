@@ -7,23 +7,22 @@ public class ammoBar : MonoBehaviour
 {
     public Slider slider;
 
-    void Start()
+	// Get the Ammo Bar component
+	void Start()
     {
         slider = GetComponent<Slider>();
     }
-    public void SetAmmo(int ammo)
+
+    // Set the ammo amount on the ammo bar based on the number of bullets left
+	public void SetAmmo(int ammo)
     {
         slider.value = ammo;
     }
-    public void SetMaxAmmo(int ammo)
+
+    // Set the maximum number of ammo for the slider
+	public void SetMaxAmmo(int ammo)
     {
         slider.maxValue = ammo;
         slider.value = ammo;   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
