@@ -38,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/ActivatePlatesScene.unity
     guid: 65dba656c635d1f468afe0cbccf4e2b8
-  - enabled: 0
-    path: Assets/Scenes/Test Scenes/TargetLeverScene.unity
-    guid: f8ce1f82ba13bed48874896137e5f12f
   - enabled: 1
     path: Assets/Scenes/Test Scenes/TestingAmmo_Gem.unity
     guid: e49e13c69da4a1c49bf157bee45ee873

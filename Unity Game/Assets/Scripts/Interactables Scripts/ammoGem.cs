@@ -16,17 +16,23 @@ public class ammoGem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Red"))
         {
-            redAmmoBar.SetAmmo(5);
-            redPlayerShoot.enabled = true;
-            redPlayerShoot.AmmoCount = 5;
-            Destroy(gameObject);
+            if (redAmmoBar != null)
+            {
+                redAmmoBar.SetAmmo(5);
+                redPlayerShoot.enabled = true;
+                redPlayerShoot.AmmoCount = 5;
+                Destroy(gameObject);
+            }
         }
         else if (other.gameObject.CompareTag("Blue"))
         {
-            blueAmmoBar.SetAmmo(5);
-            bluePlayerShoot.enabled = true;
-            bluePlayerShoot.AmmoCount = 5;
-            Destroy(gameObject);
+            if (blueAmmoBar != null)
+            {
+                blueAmmoBar.SetAmmo(5);
+                bluePlayerShoot.enabled = true;
+                bluePlayerShoot.AmmoCount = 5;
+                Destroy(gameObject);
+            }
         }
     }
 }

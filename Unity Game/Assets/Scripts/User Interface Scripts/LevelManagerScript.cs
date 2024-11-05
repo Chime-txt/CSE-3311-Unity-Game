@@ -7,6 +7,7 @@ public class LevelManagerScript : MonoBehaviour
 	[SerializeField] GameObject gameOverUI;
 	[SerializeField] GameObject pauseMenuUI;
 	[SerializeField] GameObject pauseButtonUI;
+	[SerializeField] GameObject ammoBarUI;
 
 	// The state of the player object is one way to determine the state of the level manager 
 	[SerializeField] GameObject playersObject;
@@ -69,9 +70,8 @@ public class LevelManagerScript : MonoBehaviour
 				playersObject.SetActive(false);
 			}
 
-			// Enable the pause menu and disable the in-game pause button
+			// Enable the pause menu
 			pauseMenuUI.SetActive(true);
-			pauseButtonUI.SetActive(false);
 
 			Debug.Log("> Paused");
 		}
@@ -86,9 +86,8 @@ public class LevelManagerScript : MonoBehaviour
 				playersObject.SetActive(true);
 			}
 
-			// Disable the pause menu and enable the in-game pause button
+			// Disable the pause menu
 			pauseMenuUI.SetActive(false);
-			pauseButtonUI.SetActive(true);
 
 			Debug.Log("> Unpaused");
 		}
@@ -104,9 +103,10 @@ public class LevelManagerScript : MonoBehaviour
 		// Disable one or both players (if present)
 		playersObject.SetActive(false);
 
-		// Disable all pause menu related UI
+		// Disable all other related UI besides the game over UI
 		pauseButtonUI.SetActive(false);
 		pauseMenuUI.SetActive(false);
+		ammoBarUI.SetActive(false);
 
 		// Enable game over screen UI
 		gameOverUI.SetActive(true);

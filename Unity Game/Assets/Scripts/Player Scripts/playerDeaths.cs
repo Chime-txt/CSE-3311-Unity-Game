@@ -56,14 +56,17 @@ public class playerDeaths : MonoBehaviour
 	// To trigger this function, the player has to enter the death plane
 	private void OnTriggerEnter2D(Collider2D trigger)
 	{
-		// Check if the death lock is not being used
-		if (!deathLock)
+		if (deathPlanes != null)
 		{
-			// If player enters the Death Planes, kill the player
-			if (trigger.CompareTag("Death Planes"))
+			// Check if the death lock is not being used
+			if (!deathLock)
 			{
-				Debug.Log("Player Died By Death Plane");
-				LockKillPlayer();
+				// If player enters the Death Planes, kill the player
+				if (trigger.CompareTag("Death Planes"))
+				{
+					Debug.Log("Player Died By Death Plane");
+					LockKillPlayer();
+				}
 			}
 		}
 	}

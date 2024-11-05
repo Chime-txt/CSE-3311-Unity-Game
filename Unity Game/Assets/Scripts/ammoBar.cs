@@ -16,13 +16,17 @@ public class ammoBar : MonoBehaviour
     // Set the ammo amount on the ammo bar based on the number of bullets left
 	public void SetAmmo(int ammo)
     {
-        slider.value = ammo;
+        if (slider != null)
+            slider.value = ammo;
     }
 
     // Set the maximum number of ammo for the slider
 	public void SetMaxAmmo(int ammo)
     {
-        slider.maxValue = ammo;
-        slider.value = ammo;   
+        if (slider != null)
+        {
+            slider.maxValue = ammo;
+            slider.value = ammo;
+        }
     }
 }
