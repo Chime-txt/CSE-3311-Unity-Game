@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class ammoGem : MonoBehaviour
 {
-    [Header("Variables for Red Slime")]
+    [Header("Red Slime")]
     public ammoBar redAmmoBar;
     public playerShoot redPlayerShoot;
-    [Header("Variables for Blue Slime")]
+
+    [Header("Blue Slime")]
     public ammoBar blueAmmoBar;
     public playerShoot bluePlayerShoot;
 

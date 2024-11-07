@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MovingSkyScript : MonoBehaviour
 {
-	public float moveSpeed = 5;
-	public float deleteSkyZone = -20;
+	[SerializeField] float moveSpeed = 5;
+	[SerializeField] float deleteSkyZone = -20;
 
 	// Update is called once per frame
 	void Update()

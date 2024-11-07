@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class playerDeaths : MonoBehaviour
 {
-	[SerializeField] float timeTillDeath = 1.4f;
+	[Header("Player Variables")]
 	[SerializeField] Animator animator;
 	[SerializeField] playerMovement playerMove;
-	[SerializeField] Rigidbody2D rb;
+	[SerializeField] Rigidbody2D rigidBody2D;
+	[SerializeField] float timeTillDeath = 1.4f;
 
 	// Death planes
+	[Header("Death Planes")]
 	[SerializeField] GameObject deathPlanes;
 
 	// The level manager controls the UI elements
+	[Header("Level Manager")]
 	[SerializeField] LevelManagerScript levelManager;
 
 	// Lock the collision before players are about to die
@@ -96,7 +99,7 @@ public class playerDeaths : MonoBehaviour
 
 		// Disable all player movement
 		playerMove.isAbleToMove = false;
-		rb.velocity = new Vector2(0.0f, 0.0f);
+		rigidBody2D.velocity = new Vector2(0.0f, 0.0f);
 
 		// Call a coroutine to play the death animation 
 		StartCoroutine(DeathAnimation());

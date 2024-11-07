@@ -7332,6 +7332,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3053e4b10df56446a959e76af7e17f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &940901954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940901955}
+  m_Layer: 0
+  m_Name: Bullet Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940901955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940901954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973773941
 GameObject:
   m_ObjectHideFlags: 0
@@ -8120,6 +8151,10 @@ PrefabInstance:
       propertyPath: AmmoCount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6195493583055923064, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: playerBullets
+      value: 
+      objectReference: {fileID: 1171253728}
     - target: {fileID: 8039413594043138224, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.944351
@@ -8715,6 +8750,10 @@ PrefabInstance:
       propertyPath: ammoBar
       value: 
       objectReference: {fileID: 586323141}
+    - target: {fileID: 3052680265807090114, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
+      propertyPath: playerBullets
+      value: 
+      objectReference: {fileID: 1171253728}
     - target: {fileID: 4851051102394225124, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.686352
@@ -15318,6 +15357,7 @@ SceneRoots:
   - {fileID: 2080364893}
   - {fileID: 1847804309}
   - {fileID: 586323139}
+  - {fileID: 940901955}
   - {fileID: 973773942}
   - {fileID: 459975800}
   - {fileID: 492529467}

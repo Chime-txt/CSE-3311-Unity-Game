@@ -248,14 +248,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0667eef828261bf4988c9ad0a86ffa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8173457748007210201}
+  rigidBody2D: {fileID: 8173457748007210201}
   groundCheck: {fileID: 3711209931083593313}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  animator: {fileID: 906656915460700229}
   speed: 5
   jumpingPower: 11.3
-  animator: {fileID: 906656915460700229}
   isOnGround: 1
   isAbleToMove: 1
 --- !u!114 &2599237482822806243
@@ -282,10 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c6598252c59f649a612c35739f16ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDeath: 1.4
   animator: {fileID: 906656915460700229}
   playerMove: {fileID: 149785408635341347}
-  rb: {fileID: 8173457748007210201}
+  rigidBody2D: {fileID: 8173457748007210201}
+  timeTillDeath: 1.4
   deathPlanes: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!114 &6195493583055923064
@@ -301,10 +301,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2283758283078608679}
-  bulletPrefab: {fileID: 4665605975415529816, guid: 5d39fb55b9951fd428b1676c808936ea, type: 3}
   ammoBar: {fileID: 0}
+  bulletPrefab: {fileID: 4665605975415529816, guid: 5d39fb55b9951fd428b1676c808936ea, type: 3}
   AmmoCount: 5
   maxAmmoCount: 5
+  bulletCooldown: 0.3
+  blueLock: 0
+  redLock: 0
 --- !u!95 &906656915460700229
 Animator:
   serializedVersion: 5

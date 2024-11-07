@@ -8,8 +8,8 @@ using UnityEngine;
 public class BulletCollision : MonoBehaviour
 {
     [SerializeField] private float StunTime = 5f;
-    private bool isStun = false;
-    private Rigidbody2D rb;
+    private bool isStun;
+    private Rigidbody2D rigidBody2D;
     private flipEnemy flipEnemyScript;
     private OscillatingPlatform oscillatingPlatformScript;
     private string originalTag;
@@ -18,12 +18,14 @@ public class BulletCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+		rigidBody2D = GetComponent<Rigidbody2D>();
         flipEnemyScript = GetComponent<flipEnemy>();
         oscillatingPlatformScript = GetComponent<OscillatingPlatform>();
         originalTag = gameObject.tag;
         boxCollider = GetComponent<BoxCollider2D>();
-    }
+        isStun = false;
+
+	}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Bullet collision with an Enemy
@@ -52,9 +54,9 @@ public class BulletCollision : MonoBehaviour
             isStun = true;
 
 
-            // Stun enemy movement
-            rb.velocity = Vector2.zero;
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+			// Stun enemy movement
+			rigidBody2D.velocity = Vector2.zero;
+			rigidBody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             gameObject.tag = "Stunned";
 
             Vector3 originalposition = transform.position;
@@ -97,8 +99,8 @@ public class BulletCollision : MonoBehaviour
                 boxCollider.enabled = true;
             }
 
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+			rigidBody2D.constraints = RigidbodyConstraints2D.None;
+			rigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             gameObject.tag = originalTag;
 

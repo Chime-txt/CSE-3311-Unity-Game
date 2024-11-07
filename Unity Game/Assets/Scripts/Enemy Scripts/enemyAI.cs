@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class enemyAI: MonoBehaviour
 {
+	[Header("Players")]
 	[SerializeField] Transform player1, player2;
+
+	[Header("Enemy")]
 	private Transform target;
 	[SerializeField] float speed = 200f;
 	[SerializeField] float nextWaypointDistance = 3f;
@@ -17,8 +20,9 @@ public class enemyAI: MonoBehaviour
 	bool reachedEndOfPath;
 	int currentWaypoint;
 
-	Seeker seeker;
 	Rigidbody2D rb;
+	Seeker seeker;
+
 	// Start is called before the first frame update
 	void Start()
 	{

@@ -1,16 +1,25 @@
 using UnityEngine;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 public class PortalCheck : MonoBehaviour
 {
+	[Header("Portal Check")]
+	[SerializeField] PortalCheck otherPortalCheck;
 	[SerializeField] bool isRedPortal = false; // Set this to true only for the Red Portal
 	[SerializeField] bool isBluePortal = false; // Set this to true only for the Blue Portal
+	[SerializeField] bool playerAtPortal = false;
+	[SerializeField] bool completeLock = false;
 
-	[SerializeField] PortalCheck otherPortalCheck;
-	[SerializeField] GameObject levelCompleteMessage;
+	[Header("Player Management")]
 	[SerializeField] Animator redPlayerAnimator;
 	[SerializeField] Animator bluePlayerAnimator;
+
+	[Header("Level Manager")]
 	[SerializeField] LevelManagerScript levelManager;
+
+	[Header("UI Management")]
+	[SerializeField] GameObject levelCompleteMessage;
 
 	private static bool redPlayerFaded;
 	private static bool bluePlayerFaded;
@@ -28,23 +37,65 @@ public class PortalCheck : MonoBehaviour
 		// Check if the Red Player enters the Red Portal
 		if (isRedPortal && collision.CompareTag("Red") && !redPlayerFaded)
 		{
-			redPlayerAnimator.SetTrigger("Fadeout");
-			StartCoroutine(FadeOutPlayer("Red", collision));
+			playerAtPortal = true;
+
+			StartCoroutine(CheckWinConditions("Red", collision));
 		}
 		// Check if the Blue Player enters the Blue Portal
 		else if (isBluePortal && collision.CompareTag("Blue") && !bluePlayerFaded)
 		{
-			bluePlayerAnimator.SetTrigger("Fadeout");
-			StartCoroutine(FadeOutPlayer("Blue", collision));
+			// Indicates that the player is at their portal
+			playerAtPortal = true;
+
+			StartCoroutine(CheckWinConditions("Blue", collision));
 		}
 		// Wrong player enters the portal - trigger death actions
-		else if (isRedPortal && collision.CompareTag("Blue")) // Blue player enters Red portal
+		else if (isRedPortal && collision.CompareTag("Blue") && !completeLock) // Blue player enters Red portal
 		{
 			TriggerDeath(collision.gameObject);
 		}
-		else if (isBluePortal && collision.CompareTag("Red")) // Red player enters Blue portal
+		else if (isBluePortal && collision.CompareTag("Red") && !completeLock) // Red player enters Blue portal
 		{
 			TriggerDeath(collision.gameObject);
+		}
+	}
+
+	// If the player leaves the portal at any time before the other player reaches their respective
+	// portal, this function sets their flag at the portal to false
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		// Indicates that the player is not at their portal
+		playerAtPortal = false;
+	}
+
+	private IEnumerator CheckWinConditions(string playerTag, Collider2D collision)
+	{
+		Debug.Log(playerTag + " Entered Their Portal");
+
+		while(playerAtPortal && !completeLock)
+		{
+			// Check if the other portal is active and enabled
+			// and if the other player is at their portal
+			// and if lock is taken (to prevent retriggering the function)
+			if (otherPortalCheck.isActiveAndEnabled && otherPortalCheck.playerAtPortal && !completeLock)
+			{
+				// Set the lock when both players reached their respective portals
+				completeLock = true;
+
+				if (playerTag == "Red")
+				{
+					// Play the fade out animation for the red player
+					redPlayerAnimator.SetTrigger("Fadeout");
+					StartCoroutine(FadeOutPlayer("Red", collision));
+				}
+				if (playerTag == "Blue")
+				{
+					// Play the fade out animation for the blue player
+					bluePlayerAnimator.SetTrigger("Fadeout");
+					StartCoroutine(FadeOutPlayer("Blue", collision));
+				}
+			}
+			yield return new WaitForFixedUpdate();
 		}
 	}
 

@@ -3,13 +3,15 @@ using UnityEngine.InputSystem;
 
 public class playerMovement : MonoBehaviour
 {
-	[SerializeField] Rigidbody2D rb;
+	[Header("Player")]
+	[SerializeField] Rigidbody2D rigidBody2D;
 	[SerializeField] Transform groundCheck;
 	[SerializeField] LayerMask groundLayer;
-	[SerializeField] float speed = 8f;
-	[SerializeField] float jumpingPower = 16f;
 	[SerializeField] Animator animator;
 
+	[Header("Movement")]
+	[SerializeField] float speed = 8f;
+	[SerializeField] float jumpingPower = 16f;
 #pragma warning disable CA1051 // Do not declare visible instance fields
 	public bool isOnGround = true;
 	public bool isAbleToMove = true;
@@ -35,7 +37,7 @@ public class playerMovement : MonoBehaviour
 		{
 			FlipMethod();
 			IsGrounded(); // Continuously check if on ground
-			rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // Ensures smooth physics
+			rigidBody2D.velocity = new Vector2(horizontal * speed, rigidBody2D.velocity.y); // Ensures smooth physics
 		}
 	}
 
@@ -45,14 +47,14 @@ public class playerMovement : MonoBehaviour
 		{ 
 			if (context.performed && isOnGround) // Use isOnGround directly
 			{
-				rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // Jump
+				rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpingPower); // Jump
 				isOnGround = false;
 				animator.SetBool("isJumping", !isOnGround);
 			}
 
-			if (context.canceled && rb.velocity.y > 0f) // If the player is falling down
+			if (context.canceled && rigidBody2D.velocity.y > 0f) // If the player is falling down
 			{
-				rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); // Go down
+				rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, rigidBody2D.velocity.y * 0.5f); // Go down
 				animator.SetBool("isJumping", false);
 			}
 		}

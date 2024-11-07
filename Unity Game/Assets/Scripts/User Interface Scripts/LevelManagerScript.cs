@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class LevelManagerScript : MonoBehaviour
 {
+	// The state of the player object is one way to determine the state of the level manager 
+	[Header("Player Management")]
+	[SerializeField] GameObject playersObject;
+
+	[Header("UI Management")]
 	[SerializeField] GameObject gameOverUI;
 	[SerializeField] GameObject pauseMenuUI;
 	[SerializeField] GameObject pauseButtonUI;
 	[SerializeField] GameObject ammoBarUI;
-
-	// The state of the player object is one way to determine the state of the level manager 
-	[SerializeField] GameObject playersObject;
 
 	// Start is called before the first frame update
 	void Start()

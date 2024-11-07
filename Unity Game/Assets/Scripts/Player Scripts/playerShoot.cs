@@ -9,19 +9,26 @@ using UnityEngine.InputSystem;
 
 public class playerShoot : MonoBehaviour
 {
+
+	[Header("Player")]
 	public Transform shootingPoint;
-	public GameObject bulletPrefab;
+
+	[Header("UI Management")]
 	public ammoBar ammoBar;
-	// [SerializeField] float bulletLifetime = 5f;
+
+	[Header("Bullet")]
+	public GameObject bulletPrefab;
 	public int AmmoCount = 5;
 	public int maxAmmoCount = 5;
+	// [SerializeField] float bulletLifetime = 5f;
+	// Set a cooldown between when the bullet was first shot and when the player can shoot again
+	[SerializeField] float bulletCooldown = 0.3f;
 
 	// Locks the code down when the player shoots a bullet
+	[Header("Player Locks")]
 	[SerializeField] bool blueLock;
 	[SerializeField] bool redLock;
 
-	// Set a cooldown between when the bullet was first shot and when the player can shoot again
-	[SerializeField] float bulletCooldown = 0.3f;
 
 	private void Start()
     {
@@ -53,6 +60,7 @@ public class playerShoot : MonoBehaviour
 
 				// Create the bullet using the prefab for the bullet
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+				// bullet.transform.SetParent(shootingPoint, false);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
 
@@ -84,7 +92,9 @@ public class playerShoot : MonoBehaviour
 
 				// Create the bullet using the prefab for the bullet
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+				// bullet.transform.SetParent(shootingPoint, false);
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+				bulletScript.SetPlayer(gameObject);
 
 				// Reduce the ammo amount and check the ammo bar
 				AmmoCount--;

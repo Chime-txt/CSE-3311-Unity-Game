@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 3358823499369529921}
   - component: {fileID: 5846736362147046697}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: Level Manager
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -772,11 +772,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddb81be77a6d1c4d87432379dbf49ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playersObject: {fileID: 0}
   gameOverUI: {fileID: 297718603627230047}
   pauseMenuUI: {fileID: 5723778488390720862}
   pauseButtonUI: {fileID: 3528270935028794925}
   ammoBarUI: {fileID: 7177376872087648745}
-  playersObject: {fileID: 0}
 --- !u!1 &5438830424952056326
 GameObject:
   m_ObjectHideFlags: 0

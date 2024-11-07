@@ -148,8 +148,7 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2922828598351542969, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -183,6 +182,7 @@ MonoBehaviour:
   amplitude: 5
   isXAxis: 1
   frequency: 1
+  isMoving: 1
 --- !u!114 &4651686912995192410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a1361144623a1418efc97ffe3c6d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StunTime: 5
 --- !u!114 &6480205625386461335
 MonoBehaviour:
   m_ObjectHideFlags: 0

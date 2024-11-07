@@ -7,17 +7,20 @@ public class SkySpawnScript : MonoBehaviour
 {
 	// Gets the GameObject that is connected to this script
 	// In this case, the object is the SkySpawner
-	public GameObject sky;
+	[SerializeField] GameObject sky;
 	// Sets how long the sky prefab should spawn in after the prior sky prefab
-	public float skySpawnerRate = 5;
+	[SerializeField] float skySpawnerRate = 5;
 	// Keeps track of the time until the sky can be spawned
-	private float skyTimer = 0;
+	private float skyTimer;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		// Initially create a sky at the beginning
 		spawnSky();
+
+		// Set the sky timer to 0
+		skyTimer = 0;
 	}
 
 	// Update is called once per frame
