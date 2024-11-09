@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sky: {fileID: 1370616744018556509, guid: b96bd4324dfed30429d1d6bd4e84ae1b, type: 3}
-  skySpawnerRate: 12.7
+  skySpawnerRate: 12.6

@@ -32,6 +32,7 @@ public class PortalCheck : MonoBehaviour
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
 	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		// Check if the Red Player enters the Red Portal

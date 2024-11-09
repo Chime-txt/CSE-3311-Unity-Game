@@ -704,7 +704,7 @@ GameObject:
   m_Layer: 0
   m_Name: UI Management
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1692,6 +1692,10 @@ PrefabInstance:
     - target: {fileID: 852177196165408914, guid: 48ba3858445f5ac4398b734c435a5508, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125209758927176853, guid: 48ba3858445f5ac4398b734c435a5508, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3141637143506073454, guid: 48ba3858445f5ac4398b734c435a5508, type: 3}
       propertyPath: m_Icon

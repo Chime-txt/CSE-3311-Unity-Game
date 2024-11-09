@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: Portal Management
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -61,17 +61,25 @@ PrefabInstance:
       propertyPath: redPlayerAnimator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5785908392820631178, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785908392820631178, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6647514063432576353, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.85634
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 6647514063432576353, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.10376606
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647514063432576353, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.117752485
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647514063432576353, guid: b2e4cf595aaca9440b361a82e2c88642, type: 3}
       propertyPath: m_LocalRotation.w
@@ -144,15 +152,15 @@ PrefabInstance:
       objectReference: {fileID: 3129745437824490920}
     - target: {fileID: 3327655852530407523, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.85634
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3327655852530407523, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.10376606
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327655852530407523, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.117752485
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327655852530407523, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -185,6 +193,14 @@ PrefabInstance:
     - target: {fileID: 5732497911359289738, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
       propertyPath: m_Name
       value: BluePortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218144487395302604, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218144487395302604, guid: 90664b1f8d55d0a48add621006de34a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

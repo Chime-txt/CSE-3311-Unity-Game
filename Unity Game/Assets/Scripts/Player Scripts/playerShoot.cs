@@ -9,15 +9,15 @@ using UnityEngine.InputSystem;
 
 public class playerShoot : MonoBehaviour
 {
-
-	[Header("Player")]
-	public Transform shootingPoint;
+	[Header("Player Management")]
+	[SerializeField] Transform shootingPoint;
+	[SerializeField] Transform playerBullets;
 
 	[Header("UI Management")]
 	public ammoBar ammoBar;
 
 	[Header("Bullet")]
-	public GameObject bulletPrefab;
+	[SerializeField] GameObject bulletPrefab;
 	public int AmmoCount = 5;
 	public int maxAmmoCount = 5;
 	// [SerializeField] float bulletLifetime = 5f;
@@ -60,7 +60,8 @@ public class playerShoot : MonoBehaviour
 
 				// Create the bullet using the prefab for the bullet
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-				// bullet.transform.SetParent(shootingPoint, false);
+				bullet.transform.SetParent(playerBullets, true);
+				bullet.name = "Red Bullet";
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
 
@@ -92,7 +93,8 @@ public class playerShoot : MonoBehaviour
 
 				// Create the bullet using the prefab for the bullet
 				GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-				// bullet.transform.SetParent(shootingPoint, false);
+				bullet.transform.SetParent(playerBullets, true);
+				bullet.name = "Blue Bullet";
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
 

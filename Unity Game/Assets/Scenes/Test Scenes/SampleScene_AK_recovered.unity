@@ -2475,11 +2475,11 @@ PrefabInstance:
       objectReference: {fileID: 332324837}
     - target: {fileID: 3140315993856110414, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 12.09
       objectReference: {fileID: 0}
     - target: {fileID: 3140315993856110414, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 3140315993856110414, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2516,6 +2516,22 @@ PrefabInstance:
     - target: {fileID: 3595536091477400527, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_Name
       value: Portal Management
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583110313326518681, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583110313326518681, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470202873393327321, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470202873393327321, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
