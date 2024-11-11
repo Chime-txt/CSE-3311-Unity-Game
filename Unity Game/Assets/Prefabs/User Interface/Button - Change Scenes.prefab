@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 1890939480529210860}
   - component: {fileID: 7897886203191530166}
   - component: {fileID: 4954915646554000158}
+  - component: {fileID: 3053989270254233965}
   m_Layer: 5
   m_Name: Button - Change Scenes
   m_TagString: Untagged
@@ -255,7 +256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3053989270254233965}
         m_TargetAssemblyTypeName: ChangeSceneScript, Assembly-CSharp
         m_MethodName: ChangingScenes
         m_Mode: 5
@@ -264,6 +265,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: TilemapTestScene
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3053989270254233965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087419847313776237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12b255ec16a1fc4d87eb4ec79d4e0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

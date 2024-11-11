@@ -1254,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4954915646554000158, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DemoScene
+      value: LevelSelectMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7150102841482497193, guid: 756c9b7665c2bb242b21087d3788765a, type: 3}
       propertyPath: m_Pivot.x
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 0.3.0'
+  m_text: 'Version: 1.0.0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
