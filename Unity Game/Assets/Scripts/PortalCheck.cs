@@ -22,19 +22,18 @@ public class PortalCheck : MonoBehaviour
 	[Header("UI Management")]
 	[SerializeField] GameObject levelCompleteMessage;
 
-	private static bool redPlayerFaded;
-	private static bool bluePlayerFaded;
+	public bool redPlayerFaded;
+	public bool bluePlayerFaded;
 	private static bool hasLevelCompleted;
 	private float deathDelay = 1.4f; // Delay before the player is destroyed
 
 	[Header("Vars for Next Level")]
+	bool isOnLastLevel = false;
     public int nextSceneLoad;
 	int lastScene = 8;
 
     public void Start()
 	{
-		nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
-
 		redPlayerFaded = false;
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
@@ -170,8 +169,9 @@ public class PortalCheck : MonoBehaviour
 	{
 		if (redPlayerFaded && bluePlayerFaded)
 		{
-			if (SceneManager.GetActiveScene().buildIndex == lastScene)
+			if (SceneManager.GetActiveScene().buildIndex == lastScene && isOnLastLevel == false)
 			{
+				isOnLastLevel = true;
 				Debug.Log("YOU WIN");
 
 			}
