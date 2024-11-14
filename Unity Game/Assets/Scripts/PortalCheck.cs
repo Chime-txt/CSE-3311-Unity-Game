@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using UnityEngine.SceneManagement;
 
 public class PortalCheck : MonoBehaviour
 {
@@ -26,14 +27,24 @@ public class PortalCheck : MonoBehaviour
 	private static bool hasLevelCompleted;
 	private float deathDelay = 1.4f; // Delay before the player is destroyed
 
-	public void Start()
+	[Header("Vars for Next Level")]
+    public int nextSceneLoad;
+	int lastScene = 8;
+
+    public void Start()
 	{
+		nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
 		redPlayerFaded = false;
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
 	}
+    private void Update()
+    {
+		MoveToNextLevel();
+    }
 
-	private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
 	{
 		// Check if the Red Player enters the Red Portal
 		if (isRedPortal && collision.CompareTag("Red") && !redPlayerFaded)
@@ -155,7 +166,31 @@ public class PortalCheck : MonoBehaviour
 		// Destroy the player GameObject after the delay
 		StartCoroutine(DestroyPlayer(player, deathDelay));
 	}
+	private void MoveToNextLevel()
+	{
+		if (redPlayerFaded && bluePlayerFaded)
+		{
+			if (SceneManager.GetActiveScene().buildIndex == lastScene)
+			{
+				Debug.Log("YOU WIN");
 
+			}
+            else
+            {
+                //Move to Next Level
+                SceneManager.LoadScene(nextSceneLoad);
+                Debug.Log("MOVING TO NEXT LEVEL");
+
+                if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+                {
+                    Debug.Log("PlayerPref = " + PlayerPrefs.GetInt("levelAt"));
+                    PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+                    Debug.Log("Setting PlayerPref levelAt to: " + nextSceneLoad);
+                }
+            }
+
+		}
+	}
 	private IEnumerator DestroyPlayer(GameObject player, float delay)
 	{
 		yield return new WaitForSeconds(delay);
