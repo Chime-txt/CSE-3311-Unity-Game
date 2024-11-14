@@ -31,6 +31,16 @@ public class ChangeSceneScript : MonoBehaviour
 		Debug.Log("Scene Changed To " + sceneName);
 	}
 
+	// Abu, put the code from the Portal Check into this script
+	public void NextLevel(string sceneName)
+	{
+		// Do not load the next scene as the function above does it, but if you need to, add your code to both functions.
+
+
+		// This function will then change scenes, given the name of the scene in the next level button.
+		ChangingScenes(sceneName);
+	}
+
 	// This function is dedicated to the Restart UI button which restarts the level with the
 	// current build index
 	// To trigger this function, the Restart button has to be pressed and then selected

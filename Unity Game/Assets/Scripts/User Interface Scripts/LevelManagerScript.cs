@@ -66,7 +66,7 @@ public class LevelManagerScript : MonoBehaviour
 			// Pause in-game speed (0)
 			setGameSpeed(0);
 
-			if (playersObject.gameObject != null)
+			if ((playersObject != null) && (playersObject.gameObject != null))
 			{
 				// Disable one or both players (if present) in the Players Object
 				playersObject.SetActive(false);
