@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OscillatingPlatform : MonoBehaviour
+public class OscillatingEnemy : MonoBehaviour
 {
     // Start position
     private Vector3 startPosition;
@@ -15,11 +15,15 @@ public class OscillatingPlatform : MonoBehaviour
     [Header("Frequency: Speed of the oscillation")]
     [SerializeField] float frequency = 1.0f;
 
+    [SerializeField] Animator animator;
+    private SpriteRenderer spriteRenderer;
+
 
     void Start()
     {
         // Store the initial position of the platform
         startPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -40,11 +44,18 @@ public class OscillatingPlatform : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("Blue") || other.gameObject.CompareTag("Red"))
-    //    {
-    //        isMoving = false;
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Blue") || other.gameObject.CompareTag("Red"))
+        {
+            isMoving = false;
+            // Flip the enemy sprite based on the position of the other object
+            if (other.gameObject.transform.position.x < transform.position.x)
+            {
+                // Object is to the left, flip to face left
+                spriteRenderer.flipX = true;
+            }
+            animator.SetBool("Attack", !isMoving);
+        }
+    }
 }

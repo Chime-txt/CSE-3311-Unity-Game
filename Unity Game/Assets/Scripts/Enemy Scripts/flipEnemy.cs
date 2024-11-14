@@ -21,18 +21,18 @@ public class flipEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		MoveEnemy();
+		//MoveEnemy();
 		FlipMethod();
 	}
 
 	// This function makes the enemy move horizontally
 	// The game is automatically executing this function every frame 
-	private void MoveEnemy()
-	{
-		// Move the enemy horizontally
-		float moveDirection = isFacingRight ? 1 : -1;
-		transform.Translate(Vector2.right * moveDirection * speed * Time.deltaTime);
-	}
+	//private void MoveEnemy()
+	//{
+	//	// Move the enemy horizontally
+	//	float moveDirection = isFacingRight ? 1 : -1;
+	//	transform.Translate(Vector2.right * moveDirection * speed * Time.deltaTime);
+	//}
 
 	// This function makes the enemy decide whether the character should
 	// change direction
