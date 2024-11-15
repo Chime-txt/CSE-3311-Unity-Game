@@ -11,19 +11,6 @@ public class ChangeSceneScript : MonoBehaviour
     bool isOnLastLevel = false;
     public int nextSceneLoad;
     int lastScene = 8;
-	public GameObject redSlime;
-	public GameObject blueSlime;
-	private PortalCheck redPortal, bluePortal;
-
-    private void Start()
-    {
-        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
-
-        redSlime = GameObject.FindGameObjectWithTag("Red");
-		blueSlime = GameObject.FindGameObjectWithTag("Blue");
-		redPortal = redSlime.GetComponent<PortalCheck>();
-		bluePortal = blueSlime.GetComponent<PortalCheck>();
-	}
 
     // This function changes from the current scene to the dedicated scene with the scene name
     // To trigger this function, one of the listed UI Buttons (Start Game, Main Menu Level Select, Level)
@@ -77,28 +64,24 @@ public class ChangeSceneScript : MonoBehaviour
 	}
 	private void MoveToNextLevel()
     {
-        if (redPortal.redPlayerFaded && bluePortal.bluePlayerFaded)
-        {
-            if (SceneManager.GetActiveScene().buildIndex == lastScene && isOnLastLevel == false)
-            {
-                isOnLastLevel = true;
-                Debug.Log("YOU WIN");
+		if (SceneManager.GetActiveScene().buildIndex == lastScene && isOnLastLevel == false)
+		{
+			isOnLastLevel = true;
+			Debug.Log("YOU WIN");
 
-            }
-            else
-            {
-                ////Move to Next Level
-                //SceneManager.LoadScene(nextSceneLoad);
-                //Debug.Log("MOVING TO NEXT LEVEL");
+		}
+		else
+		{
+			////Move to Next Level
+			//SceneManager.LoadScene(nextSceneLoad);
+			//Debug.Log("MOVING TO NEXT LEVEL");
 
-                if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-                {
-                    //Debug.Log("PlayerPref = " + PlayerPrefs.GetInt("levelAt"));
-                    PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-                    //Debug.Log("Setting PlayerPref levelAt to: " + nextSceneLoad);
-                }
-            }
-
-        }
+			if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+			{
+				//Debug.Log("PlayerPref = " + PlayerPrefs.GetInt("levelAt"));
+				PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+				//Debug.Log("Setting PlayerPref levelAt to: " + nextSceneLoad);
+			}
+		}
     }
 }

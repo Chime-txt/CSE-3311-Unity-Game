@@ -22,15 +22,10 @@ public class PortalCheck : MonoBehaviour
 	[Header("UI Management")]
 	[SerializeField] GameObject levelCompleteMessage;
 
-	public bool redPlayerFaded;
-	public bool bluePlayerFaded;
+	private static bool redPlayerFaded;
+	private static bool bluePlayerFaded;
 	private static bool hasLevelCompleted;
 	private float deathDelay = 1.4f; // Delay before the player is destroyed
-
-	[Header("Vars for Next Level")]
-	bool isOnLastLevel = false;
-    public int nextSceneLoad;
-	int lastScene = 8;
 
     public void Start()
 	{
@@ -38,12 +33,8 @@ public class PortalCheck : MonoBehaviour
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
 	}
-    private void Update()
-    {
-		MoveToNextLevel();
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		// Check if the Red Player enters the Red Portal
 		if (isRedPortal && collision.CompareTag("Red") && !redPlayerFaded)
@@ -83,7 +74,7 @@ public class PortalCheck : MonoBehaviour
 	{
 		Debug.Log(playerTag + " Entered Their Portal");
 
-		while(playerAtPortal && !completeLock)
+		while (playerAtPortal && !completeLock)
 		{
 			// Check if the other portal is active and enabled
 			// and if the other player is at their portal
@@ -144,7 +135,7 @@ public class PortalCheck : MonoBehaviour
 		Debug.Log("Level complete!");
 
 		levelCompleteMessage.SetActive(true);
-	  
+
 	}
 
 	private void TriggerDeath(GameObject player)
@@ -160,37 +151,12 @@ public class PortalCheck : MonoBehaviour
 
 		// Disable player movement
 		playerMove.isAbleToMove = false;
-  
+
 
 		// Destroy the player GameObject after the delay
 		StartCoroutine(DestroyPlayer(player, deathDelay));
 	}
-	private void MoveToNextLevel()
-	{
-		if (redPlayerFaded && bluePlayerFaded)
-		{
-			if (SceneManager.GetActiveScene().buildIndex == lastScene && isOnLastLevel == false)
-			{
-				isOnLastLevel = true;
-				Debug.Log("YOU WIN");
 
-			}
-            else
-            {
-                //Move to Next Level
-                SceneManager.LoadScene(nextSceneLoad);
-                Debug.Log("MOVING TO NEXT LEVEL");
-
-                if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-                {
-                    Debug.Log("PlayerPref = " + PlayerPrefs.GetInt("levelAt"));
-                    PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-                    Debug.Log("Setting PlayerPref levelAt to: " + nextSceneLoad);
-                }
-            }
-
-		}
-	}
 	private IEnumerator DestroyPlayer(GameObject player, float delay)
 	{
 		yield return new WaitForSeconds(delay);
