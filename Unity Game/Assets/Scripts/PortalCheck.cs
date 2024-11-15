@@ -22,6 +22,11 @@ public class PortalCheck : MonoBehaviour
 	[Header("UI Management")]
 	[SerializeField] GameObject levelCompleteMessage;
 
+	[Header("Vars for Next Level")]
+	bool isOnLastLevel = false;
+	public int nextSceneLoad;
+	int lastScene = 8;
+
 	private static bool redPlayerFaded;
 	private static bool bluePlayerFaded;
 	private static bool hasLevelCompleted;
@@ -125,7 +130,33 @@ public class PortalCheck : MonoBehaviour
 	{
 		if (redPlayerFaded && bluePlayerFaded && !hasLevelCompleted)
 		{
+			// Perform an update on the save file
+			MoveToNextLevel();
+
+			// Toggle on the Level Complete Screen
 			CompleteLevel();
+		}
+	}
+
+	// This function was created by Abubakar
+	private void MoveToNextLevel()
+	{
+		Debug.Log("In MoveToNextLevel function");
+		if (SceneManager.GetActiveScene().buildIndex == lastScene && isOnLastLevel == false)
+		{
+			isOnLastLevel = true;
+			Debug.Log("YOU WIN");
+
+		}
+		else if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+		{
+			// Save the next level into the save file
+			nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
+			// Update the vale of the build to the save file
+			Debug.Log("PlayerPref = " + PlayerPrefs.GetInt("levelAt"));
+			PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+			Debug.Log("Setting PlayerPref levelAt to: " + nextSceneLoad);
 		}
 	}
 

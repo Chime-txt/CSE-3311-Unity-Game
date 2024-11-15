@@ -20,39 +20,7 @@ public class LevelManagerScript : MonoBehaviour
 		// Resume in-game speed (1) (redundancy due to ChangeSceneScript.cs)
 		setGameSpeed(1);
 
-		// TODO: Be able to take the user input of ESC or their respective Pause button
-		//       to pause the game
-
-		// When game starts, the cursor will not be visible and is locked so it
-		// will not interact with the game
-		// Cursor.visible = false;
-		// Cursor.lockState = CursorLockMode.Locked;
-
 		Debug.Log("> Level Start");
-	}
-
-	// FixedUpdate is called once per a fixed amount of frames
-	private void FixedUpdate()
-	{
-		// This if conditional causes the cursor to appear and be able to move
-		// To trigger this conditional, it requires the game over screen to appear
-		if (gameOverUI.activeInHierarchy)
-		{
-			// Enables the cursor to appear
-			// Cursor.visible = true;
-
-			// Enables the cursor to move around
-			// Cursor.lockState = CursorLockMode.None;
-		}
-		else
-		{
-			// This else conditional disables the cursor from being seen during gameplay
-			// Disable the cursor from being seen
-			// Cursor.visible = false;
-
-			// Disable the cursor from move
-			// Cursor.lockState = CursorLockMode.Locked;
-		}
 	}
 
 	// This function causes the pause menu overlay to appear

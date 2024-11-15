@@ -28,7 +28,7 @@ public class LevelSelection : MonoBehaviour
     void Update()
     {
         // We can make this function into a button to make it so that the player can clear the data only at the level select screen
-        if (Input.GetKeyDown(KeyCode.B)) //USED FOR DEBUGGING PURPOSES
+        if (Input.GetKeyDown(KeyCode.B)) // USED FOR DEBUGGING PURPOSES
             // SHOULD BE DELETED WHEN BUILT
         {
             PlayerPrefs.DeleteAll();

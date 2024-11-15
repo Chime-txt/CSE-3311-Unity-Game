@@ -11,10 +11,4 @@ public class MoveToNextLevel : MonoBehaviour
     {
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

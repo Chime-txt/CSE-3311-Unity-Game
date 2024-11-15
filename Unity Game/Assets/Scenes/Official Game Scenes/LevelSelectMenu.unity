@@ -487,7 +487,6 @@ MonoBehaviour:
   - {fileID: 2049141786}
   - {fileID: 451299633}
   - {fileID: 1016290065}
-  level1Index: 4
 --- !u!1 &869128308
 GameObject:
   m_ObjectHideFlags: 0
