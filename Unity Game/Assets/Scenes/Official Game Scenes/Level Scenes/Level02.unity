@@ -1381,7 +1381,7 @@ Grid:
   m_Enabled: 1
   m_CellSize: {x: 1, y: 1, z: 1}
   m_CellGap: {x: -0.05, y: -0.05, z: -0.05}
-  m_CellLayout: 3
+  m_CellLayout: 0
   m_CellSwizzle: 0
 --- !u!4 &1291576664
 Transform:
