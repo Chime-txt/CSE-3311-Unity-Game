@@ -35,15 +35,16 @@ public class PressurePlateScript : MonoBehaviour
 				noPlayersOnPressurePlate++;
 			}
 
+			// Disable the Sprite Renderer for the trigger pressure plate
+			gameObject.GetComponent<Renderer>().enabled = false;
+			
+
 			// Check if there is only one player when one or more players enters the pressure plate
 			if (noPlayersOnPressurePlate == 1)
 			{
 				Debug.Log("Activated Pressure Plate");
 
-				// Disable the Sprite Renderer for the trigger pressure plate
-				gameObject.GetComponent<Renderer>().enabled = false;
-
-				// Switch between states depending on the object
+				// Switch between states depending on the object (Active)
 				SwitchActiveState(InteractableObjects);
 			}
 		}
@@ -67,11 +68,15 @@ public class PressurePlateScript : MonoBehaviour
 				noPlayersOnPressurePlate--;
 			}
 
+			// Reenable the pressure plate, regardless if linked or unlinked
+			gameObject.GetComponent<Renderer>().enabled = true;
+			
 			// Then check if no players are on the pressure plate
 			if (noPlayersOnPressurePlate == 0)
 			{
 				Debug.Log("Deactivated Pressure Plate");
-				gameObject.GetComponent<Renderer>().enabled = true;
+
+				// Switch between states depending on the object (Not Active)
 				SwitchActiveState(InteractableObjects);
 			}
 			else
