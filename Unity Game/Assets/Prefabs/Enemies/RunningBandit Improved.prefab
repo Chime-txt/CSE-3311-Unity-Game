@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunningBandit Improved
       objectReference: {fileID: 0}
+    - target: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1669804044853387789, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
