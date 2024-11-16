@@ -28,6 +28,7 @@ TagManager:
   - Stunned
   - RedBarrier
   - BlueBarrier
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6578755321543690729
+--- !u!1001 &7397435833360430953
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -90,78 +90,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_Name
-      value: RunningBandit Variant
+      value: RunningBandit Improved
       objectReference: {fileID: 0}
     - target: {fileID: 1669804044853387789, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2922828598351542969, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6907000975969085113}
+      addedObject: {fileID: 3486280294832208580}
     - targetCorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2857892676214431234}
-    - targetCorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1414489852242135806}
+      addedObject: {fileID: 4668262666323589387}
   m_SourcePrefab: {fileID: 100100000, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
---- !u!1 &5662188916758223248 stripped
+--- !u!95 &8224708218374521370 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1480822527134709107, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
+  m_PrefabInstance: {fileID: 7397435833360430953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8318348040740284176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1574093599985209465, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
-  m_PrefabInstance: {fileID: 6578755321543690729}
+  m_PrefabInstance: {fileID: 7397435833360430953}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6907000975969085113
+--- !u!114 &3486280294832208580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5662188916758223248}
+  m_GameObject: {fileID: 8318348040740284176}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56a1361144623a1418efc97ffe3c6d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StunTime: 5
---- !u!114 &2857892676214431234
+--- !u!114 &4668262666323589387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5662188916758223248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 031696e247c291042809130531ce72bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  movementRange: 4
---- !u!114 &1414489852242135806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5662188916758223248}
+  m_GameObject: {fileID: 8318348040740284176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c81fcef9815a5184693b9a59ead7dd84, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ea16904a9e6e0a459f6e0a13490b2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMoving: 1
-  amplitude: 5
+  moveSpeed: 2
   isXAxis: 1
-  frequency: 1
-  animator: {fileID: 5746768109370358938}
---- !u!95 &5746768109370358938 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1480822527134709107, guid: 94273495a57e3314fbd2e41cbe94f97a, type: 3}
-  m_PrefabInstance: {fileID: 6578755321543690729}
-  m_PrefabAsset: {fileID: 0}
+  isMoving: 1
+  animator: {fileID: 8224708218374521370}
