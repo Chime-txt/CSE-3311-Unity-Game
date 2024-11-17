@@ -69,10 +69,15 @@ public class playerShoot : MonoBehaviour
 				bullet.name = "Red Bullet";
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
+				
+				// Play audio, if it exists
+				if (audioSource != null)
+				{
+					audioSource.PlayOneShot(audioClip);
+				}
 
 				// Reduce the ammo amount and check the ammo bar
-				audioSource.PlayOneShot(audioClip);
-                AmmoCount--;
+				AmmoCount--;
 				if (ammoBar)
 				{
 					ammoBar.SetAmmo(AmmoCount);
