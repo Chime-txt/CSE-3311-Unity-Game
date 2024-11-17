@@ -13,14 +13,18 @@ public class constantEnemyMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isFacingRight = true;
 
+    private bool flipLock;
+
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        flipLock = false;
+		spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    // Update the movement at a fixed rate
+    void FixedUpdate()
     {
-        if (isMoving)
+        if (!flipLock && isMoving)
         {
             // Move the enemy at a constant rate
             Vector3 movement = isXAxis ? Vector3.right : Vector3.up;
@@ -49,9 +53,10 @@ public class constantEnemyMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (!flipLock && other.gameObject.CompareTag("Wall"))
         {
-            FlipEnemy();
+            flipLock = true;
+			FlipEnemy();
         }
     }
 
@@ -65,5 +70,6 @@ public class constantEnemyMovement : MonoBehaviour
         localScale.x *= -1f;
         moveSpeed = -moveSpeed;
         transform.localScale = localScale;
-    }
+        flipLock = false;
+	}
 }

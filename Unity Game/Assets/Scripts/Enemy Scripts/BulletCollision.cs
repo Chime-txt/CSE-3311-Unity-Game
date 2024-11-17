@@ -14,15 +14,17 @@ public class BulletCollision : MonoBehaviour
     private OscillatingPlatform oscillatingPlatformScript;
     private string originalTag;
     private BoxCollider2D boxCollider;
+    private constantEnemyMovement constEnemyMovement;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 		rigidBody2D = GetComponent<Rigidbody2D>();
         flipEnemyScript = GetComponent<flipEnemy>();
         oscillatingPlatformScript = GetComponent<OscillatingPlatform>();
         originalTag = gameObject.tag;
         boxCollider = GetComponent<BoxCollider2D>();
+        constEnemyMovement = GetComponent<constantEnemyMovement>();
         isStun = false;
 
 	}
@@ -66,15 +68,21 @@ public class BulletCollision : MonoBehaviour
             {
                 flipEnemyScript.enabled = false;
             }
-            /*
+			/*
              if (oscillatingPlatformScript != null)
             {
                 oscillatingPlatformScript.isMoving = false;
             }
             */
+			if (constEnemyMovement != null)
+			{
+				constEnemyMovement.isMoving = false;
 
-            // Turn off collision
-            if (boxCollider != null)
+			}
+
+
+			// Turn off collision
+			if (boxCollider != null)
             {
                 boxCollider.enabled = false;
             }
@@ -93,6 +101,12 @@ public class BulletCollision : MonoBehaviour
                 oscillatingPlatformScript.isMoving = true;
             }
             */
+            if (constEnemyMovement != null)
+            {
+                constEnemyMovement.isMoving = true;
+
+			}
+
             // Turn on collision
             if (boxCollider != null)
             {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5956646316223084833}
   - component: {fileID: 775459721020212232}
   - component: {fileID: 8732612925742257030}
+  - component: {fileID: 4337795161120278752}
   m_Layer: 0
   m_Name: HeavyBandit Improved
   m_TagString: Purple
@@ -198,6 +199,19 @@ MonoBehaviour:
   isXAxis: 1
   isMoving: 1
   animator: {fileID: 8733273372043859808}
+--- !u!114 &4337795161120278752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072192319262311598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a1361144623a1418efc97ffe3c6d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StunTime: 2
 --- !u!1 &6512707574095429256
 GameObject:
   m_ObjectHideFlags: 0
