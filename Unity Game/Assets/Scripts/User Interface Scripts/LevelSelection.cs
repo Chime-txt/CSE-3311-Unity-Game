@@ -27,7 +27,7 @@ public class LevelSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // We can make this function into a button to make it so that the player can clear the data only at the level select screen
+        // We can make this function into a button to make it so that the developer can clear the data only at the level select screen
         if (Input.GetKeyDown(KeyCode.B)) // USED FOR DEBUGGING PURPOSES
             // SHOULD BE DELETED WHEN BUILT
         {
