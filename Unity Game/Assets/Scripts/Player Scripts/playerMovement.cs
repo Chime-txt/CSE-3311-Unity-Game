@@ -57,8 +57,12 @@ public class playerMovement : MonoBehaviour
 		{ 
 			if (context.performed && isOnGround) // Use isOnGround directly
 			{
-				audioSource.PlayOneShot(audioclip);
-				rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpingPower); // Jump
+                // Play audio, if it exists
+                if (audioSource != null)
+                {
+                    audioSource.PlayOneShot(audioclip);
+                }
+                rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpingPower); // Jump
 				isOnGround = false;
 				animator.SetBool("isJumping", !isOnGround);
 			}
