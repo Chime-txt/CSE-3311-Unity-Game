@@ -141,6 +141,10 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 1d36c0b32ad9d5049a2b30ff605bd2f1, type: 3}
+    - target: {fileID: 149785408635341347, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: audioclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47667dff8ee00f04196fdfbeb9993942, type: 3}
     - target: {fileID: 600509676827616206, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -295,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7884889936401438536, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
+      propertyPath: audioclip
+      value: 
+      objectReference: {fileID: 8300000, guid: a92dd7e93b610264bbfcecef410aa917, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
