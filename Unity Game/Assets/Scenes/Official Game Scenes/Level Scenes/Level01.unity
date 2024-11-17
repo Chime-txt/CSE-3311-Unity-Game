@@ -12670,6 +12670,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 12.513334
       objectReference: {fileID: 0}
+    - target: {fileID: 8721640106617186438, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+      propertyPath: AmmoCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
