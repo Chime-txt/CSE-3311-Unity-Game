@@ -92,13 +92,19 @@ public class playerDeaths : MonoBehaviour
 	// or go out of bounds and trigger a death plane
 	private void LockKillPlayer()
 	{
-		audioSource.PlayOneShot(audioClip);
+
 		// Check if the death lock is not being used
 		if (!deathLock)
 		{
 			// Lock the code immediately before safely executing the rest of the code
 			deathLock = true;
 			Debug.Log(gameObject.name + " Death Lock = " + deathLock);
+
+			// Play audio, if it exists
+			if (audioSource != null)
+			{
+				audioSource.PlayOneShot(audioClip);
+			}
 			
 			// Then kill the player safely
 			KillPlayer();

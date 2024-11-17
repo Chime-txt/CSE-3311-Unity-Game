@@ -165,6 +165,10 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 4b5d8cf4ad8768f4c8fcf82bc6c97acb, type: 3}
+    - target: {fileID: 6195493583055923064, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
+      propertyPath: playerBullets
+      value: 
+      objectReference: {fileID: 1593727942316763798}
     - target: {fileID: 6400438620446657658, guid: e3b2da7f65b68fb4ca72cef74fc9d4e3, type: 3}
       propertyPath: m_Icon
       value: 
@@ -243,6 +247,10 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 4b5d8cf4ad8768f4c8fcf82bc6c97acb, type: 3}
+    - target: {fileID: 3052680265807090114, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
+      propertyPath: playerBullets
+      value: 
+      objectReference: {fileID: 1593727942316763798}
     - target: {fileID: 3259683817311510713, guid: 95481f10b4698bb45a9933a530f52ecd, type: 3}
       propertyPath: m_Icon
       value: 
