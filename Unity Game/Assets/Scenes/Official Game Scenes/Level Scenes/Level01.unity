@@ -2432,11 +2432,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1425655704943143030, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.59
+      value: -23.82
       objectReference: {fileID: 0}
     - target: {fileID: 1425655704943143030, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.94
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 3140315993856110414, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2484,11 +2484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583110313326518681, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.21
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 5583110313326518681, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.09
+      value: -3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3615,7 +3615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3848427263473178493, guid: 157eb9c47bd776044a1cd20c970248de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.51
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 3848427263473178493, guid: 157eb9c47bd776044a1cd20c970248de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12612,11 +12612,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2557637069687995277, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.023328781
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 2557637069687995277, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1800003
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 3865279126836522901, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12664,11 +12664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855463073912606542, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4499998
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 4855463073912606542, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.513334
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 8721640106617186438, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: AmmoCount
