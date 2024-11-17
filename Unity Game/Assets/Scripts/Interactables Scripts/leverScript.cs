@@ -17,9 +17,10 @@ public class leverScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        terrainExists = false;
+        terrainExists = true;
 		spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = offLever;
+
         if (canCreatePlatforms && canDestroyPlatforms)
         {
             Debug.LogError("ERROR: CAN ONLY HAVE ONE BOOL CHECKED OFF");
@@ -40,19 +41,22 @@ public class leverScript : MonoBehaviour
     private void ToggleLever()
     {
         isLeverActive = !isLeverActive;
+        Debug.Log("Can destory Platforms: " + canDestroyPlatforms);
+        Debug.Log("Terrain Exists: " + terrainExists);
 
         if (isLeverActive)
         {
             spriteRenderer.sprite = onLever;
 
-            if (canCreatePlatforms && !terrainExists) // Use '&&' and '=='
+            if ((canCreatePlatforms ==  true ) && !terrainExists) // Use '&&' and '=='
             {
                 currentTerrain = Instantiate(terrainGameObject, terrainLocation.position, Quaternion.identity);
                 terrainExists = true;
             }
-            else if (canDestroyPlatforms && terrainExists) // Use '&&' and '=='
+            else if ((canDestroyPlatforms == true) && terrainExists == true) // Use '&&' and '=='
             {
-                Destroy(currentTerrain);
+                Debug.Log("Can Destory Platforms");
+                Destroy(terrainGameObject);
                 terrainExists = false;
             }
         }
@@ -60,7 +64,7 @@ public class leverScript : MonoBehaviour
         {
             spriteRenderer.sprite = offLever;
 
-            if (canCreatePlatforms && terrainExists)
+            if ((canCreatePlatforms == true) && terrainExists)
             {
                 Destroy(currentTerrain);
                 terrainExists = false;
