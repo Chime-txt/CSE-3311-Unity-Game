@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 // ChangeSceneScript changes the scene using the Unity Scene Management
 public class ChangeSceneScript : MonoBehaviour
 {
+	[SerializeField] GameObject audioFile;
+	[SerializeField] AudioClip audioClip;
+
     // The scene must first be included in the build settings before the script can change scenes
 
     // This function changes from the current scene to the dedicated scene with the scene name
@@ -13,7 +16,11 @@ public class ChangeSceneScript : MonoBehaviour
     // has to be pressed and then selected
     public void ChangingScenes(string sceneName)
 	{
-		if (string.IsNullOrEmpty(sceneName))
+        if (audioFile != null)
+        {
+            DontDestroyOnLoad(audioFile);
+        }
+        if (string.IsNullOrEmpty(sceneName))
 		{
 			// There was no level to load, instead, load main menu
 			Debug.Log("Scene name was not added to " + gameObject.name + "... Loading Main Menu...");
@@ -35,8 +42,12 @@ public class ChangeSceneScript : MonoBehaviour
 	// also saving the progress of the user who has reached a certain level
 	public void NextLevel(string sceneName)
 	{
-		// This function will then change scenes, given the name of the scene in the next level button
-		ChangingScenes(sceneName);
+        if (audioFile != null)
+        {
+            DontDestroyOnLoad(audioFile);
+        }
+        // This function will then change scenes, given the name of the scene in the next level button
+        ChangingScenes(sceneName);
 	}
 
 	// This function is dedicated to the Restart UI button which restarts the level with the
@@ -44,8 +55,13 @@ public class ChangeSceneScript : MonoBehaviour
 	// To trigger this function, the Restart button has to be pressed and then selected
 	public void RestartLevel()
 	{
-		// Loads the same level using the build index
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if (audioFile != null)
+        {
+            DontDestroyOnLoad(audioFile);
+        }
+        // Loads the same level using the build index
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	// This function is dedicated to the Quit UI button which quits the application
@@ -56,6 +72,10 @@ public class ChangeSceneScript : MonoBehaviour
 		Debug.Log("Quitting Game...");
 		Application.Quit();
 	}
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        audioFile = FindFirstObjectByType<AudioSource>().gameObject;
+    }
 
 }

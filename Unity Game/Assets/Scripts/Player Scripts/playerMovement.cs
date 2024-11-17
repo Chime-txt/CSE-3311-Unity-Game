@@ -19,7 +19,17 @@ public class playerMovement : MonoBehaviour
 	private float horizontal;
 	private bool isFacingRight = true;
 
-	private void FlipMethod()
+    // Get the music
+    [SerializeField] AudioClip audioclip;
+    [SerializeField] AudioSource audioSource;
+
+	// Start is called before the first frame update
+	void Start()
+	{
+		audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+	}
+
+        private void FlipMethod()
 	{
 		if (!isFacingRight && horizontal > 0f) // If moving right
 		{
@@ -47,6 +57,7 @@ public class playerMovement : MonoBehaviour
 		{ 
 			if (context.performed && isOnGround) // Use isOnGround directly
 			{
+				audioSource.PlayOneShot(audioclip);
 				rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpingPower); // Jump
 				isOnGround = false;
 				animator.SetBool("isJumping", !isOnGround);
