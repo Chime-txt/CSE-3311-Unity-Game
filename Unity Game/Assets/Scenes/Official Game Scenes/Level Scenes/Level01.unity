@@ -12670,6 +12670,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.86
       objectReference: {fileID: 0}
+    - target: {fileID: 5364249623548459947, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+      propertyPath: ammoBar
+      value: 
+      objectReference: {fileID: 287601795}
+    - target: {fileID: 8721640106617186438, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+      propertyPath: ammoBar
+      value: 
+      objectReference: {fileID: 287601796}
     - target: {fileID: 8721640106617186438, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: AmmoCount
       value: 5
