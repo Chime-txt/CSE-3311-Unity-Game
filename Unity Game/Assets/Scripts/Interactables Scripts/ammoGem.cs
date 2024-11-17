@@ -10,10 +10,20 @@ public class ammoGem : MonoBehaviour
     public ammoBar blueAmmoBar;
     public playerShoot bluePlayerShoot;
 
-    // Collect gem and refill ammo bar based on the player's tag
-    // Triggering this function requires the player to collect the white gem
-    // instead of their respective color gem.
-    void OnTriggerEnter2D(Collider2D other)
+    [Header("Audio Management")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+
+
+    private void Start()
+    {
+        audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+    }
+
+        // Collect gem and refill ammo bar based on the player's tag
+        // Triggering this function requires the player to collect the white gem
+        // instead of their respective color gem.
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Red"))
         {

@@ -32,9 +32,15 @@ public class PortalCheck : MonoBehaviour
 	private static bool hasLevelCompleted;
 	private float deathDelay = 1.4f; // Delay before the player is destroyed
 
-    public void Start()
-	{
-		redPlayerFaded = false;
+    [Header("Audio Management")]
+    [SerializeField] AudioClip audioclip;
+    [SerializeField] AudioSource audioSource;
+
+    void Start()
+	{ 
+        audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
+        redPlayerFaded = false;
 		bluePlayerFaded = false;
 		hasLevelCompleted = false;
 	}
@@ -93,13 +99,15 @@ public class PortalCheck : MonoBehaviour
 				{
 					// Play the fade out animation for the red player
 					redPlayerAnimator.SetTrigger("Fadeout");
+					audioSource.PlayOneShot(audioclip);
 					StartCoroutine(FadeOutPlayer("Red", collision));
 				}
 				if (playerTag == "Blue")
 				{
 					// Play the fade out animation for the blue player
 					bluePlayerAnimator.SetTrigger("Fadeout");
-					StartCoroutine(FadeOutPlayer("Blue", collision));
+                    audioSource.PlayOneShot(audioclip);
+                    StartCoroutine(FadeOutPlayer("Blue", collision));
 				}
 			}
 			yield return new WaitForFixedUpdate();

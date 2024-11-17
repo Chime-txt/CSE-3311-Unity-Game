@@ -7,13 +7,23 @@ public class WallButtonScript : MonoBehaviour
 	// Get the object or object group that will interact with this single button
 	[SerializeField] GameObject InteractableObjects;
 
-	// If the object collides with the wall button, check if it is a bullet of the same color
-	// before doing a certain task with the button and deleting the button
-	private void OnCollisionEnter2D(Collision2D collision)
+	// Get the music
+	[SerializeField] AudioClip audioclip;
+	[SerializeField] AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+    }
+
+    // If the object collides with the wall button, check if it is a bullet of the same color
+    // before doing a certain task with the button and deleting the button
+    private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if ((gameObject.CompareTag("RedButton") && collision.gameObject.tag.Equals("RedBullet"))
 			|| (gameObject.CompareTag("BlueButton") && collision.gameObject.tag.Equals("BlueBullet")))
 		{
+            audioSource.PlayOneShot(audioclip);
 			// Destroy the bullet
 			if (collision != null)
 			{
@@ -26,7 +36,8 @@ public class WallButtonScript : MonoBehaviour
 			// Complete a certain action based on the object that is connected
 			if (InteractableObjects != null)
 			{
-				CheckObjectTags(InteractableObjects);
+                audioSource.PlayOneShot(audioclip);
+                CheckObjectTags(InteractableObjects);
 			}
 
 			// Removes the button after it has been activated

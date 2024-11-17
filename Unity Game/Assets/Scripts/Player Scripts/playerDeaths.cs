@@ -21,9 +21,13 @@ public class playerDeaths : MonoBehaviour
 	// Lock the collision before players are about to die
 	private bool deathLock;
 
-	// Start is called before the first frame update
-	void Start()
+    [Header("Audio Management")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+    // Start is called before the first frame update
+    void Start()
 	{
+		audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
 		deathLock = false;
 		playerMove = GetComponent<playerMovement>();
 	}
@@ -88,6 +92,7 @@ public class playerDeaths : MonoBehaviour
 	// or go out of bounds and trigger a death plane
 	private void LockKillPlayer()
 	{
+		audioSource.PlayOneShot(audioClip);
 		// Check if the death lock is not being used
 		if (!deathLock)
 		{

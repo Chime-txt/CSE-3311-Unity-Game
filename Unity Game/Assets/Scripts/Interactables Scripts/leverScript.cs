@@ -14,9 +14,16 @@ public class leverScript : MonoBehaviour
     private GameObject currentTerrain;
     private bool terrainExists;
 
+    // Get the music
+    [SerializeField] AudioClip audioclip;
+    [SerializeField] AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
         terrainExists = true;
 		spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = offLever;
@@ -41,6 +48,8 @@ public class leverScript : MonoBehaviour
     private void ToggleLever()
     {
         isLeverActive = !isLeverActive;
+        audioSource.PlayOneShot(audioclip);
+
         Debug.Log("Can destory Platforms: " + canDestroyPlatforms);
         Debug.Log("Terrain Exists: " + terrainExists);
 

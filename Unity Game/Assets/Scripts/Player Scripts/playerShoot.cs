@@ -29,9 +29,14 @@ public class playerShoot : MonoBehaviour
 	[SerializeField] bool blueLock;
 	[SerializeField] bool redLock;
 
+	[Header("Audio Management")]
+	[SerializeField] AudioSource audioSource;
+	[SerializeField] private AudioClip audioClip;
+
 
 	private void Start()
     {
+		audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
 		// Disable the locks for the bullets
 		blueLock = false;
 		redLock = false;
@@ -66,6 +71,7 @@ public class playerShoot : MonoBehaviour
 				bulletScript.SetPlayer(gameObject);
 
 				// Reduce the ammo amount and check the ammo bar
+				audioSource.PlayOneShot(audioClip);
                 AmmoCount--;
 				if (ammoBar)
 				{
@@ -98,8 +104,9 @@ public class playerShoot : MonoBehaviour
 				BulletScript bulletScript = bullet.GetComponent<BulletScript>();
 				bulletScript.SetPlayer(gameObject);
 
-				// Reduce the ammo amount and check the ammo bar
-				AmmoCount--;
+                // Reduce the ammo amount and check the ammo bar
+                audioSource.PlayOneShot(audioClip);
+                AmmoCount--;
 				if (ammoBar)
 				{
 	                ammoBar.SetAmmo(AmmoCount);

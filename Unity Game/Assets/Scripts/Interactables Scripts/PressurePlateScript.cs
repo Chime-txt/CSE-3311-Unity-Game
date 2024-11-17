@@ -11,9 +11,14 @@ public class PressurePlateScript : MonoBehaviour
 	[SerializeField] GameObject PlayerObject;
 
 	private int noPlayersOnPressurePlate;
+    // Get the music
+    [SerializeField] AudioClip audioclip;
+    [SerializeField] AudioSource audioSource;
 
-	void Start()
-	{
+    void Start()
+	{ 
+
+        audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
 		noPlayersOnPressurePlate = 0;
 		gameObject.GetComponent<Renderer>().enabled = true;
 	}
@@ -23,7 +28,7 @@ public class PressurePlateScript : MonoBehaviour
 		if (other.gameObject.tag.Equals("Red") || other.gameObject.tag.Equals("Blue"))
 		{
 			Debug.Log("Entered Pressure Plate");
-
+			audioSource.PlayOneShot(audioclip);
 			// Add to the number of players on the pressure plate
 			if (LinkedPlates != null)
 			{
