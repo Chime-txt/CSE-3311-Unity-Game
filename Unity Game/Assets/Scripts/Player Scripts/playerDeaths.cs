@@ -108,9 +108,10 @@ public class playerDeaths : MonoBehaviour
 
 		// Disable all player movement
 		playerMove.isAbleToMove = false;
+		rigidBody2D.gravityScale = 0.01f;
 		rigidBody2D.velocity = new Vector2(0.0f, 0.0f);
 
-		// Call a coroutine to play the death animation 
+		// Call a coroutine to play the death animation
 		StartCoroutine(DeathAnimation());
 
 		IEnumerator DeathAnimation()

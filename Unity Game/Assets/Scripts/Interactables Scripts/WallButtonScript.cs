@@ -61,5 +61,12 @@ public class WallButtonScript : MonoBehaviour
 			InteractableObjects.SetActive(false);
 			return;
 		}
+
+		if (InteractableObjects.gameObject.tag.Equals("Ground"))
+		{
+			Debug.Log("Switched Object State");
+			Renderer io = InteractableObjects.gameObject.GetComponent<Renderer>();
+			SwitchActiveState(io);
+		}
 	}
 }
