@@ -28,7 +28,7 @@ public class leverScript : MonoBehaviour
 
     // After an object collides with the lever, check if the collision is
     // a player before calling another function to toggle the lever
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("Red") || other.gameObject.tag.Equals("Blue"))
         {
@@ -40,27 +40,32 @@ public class leverScript : MonoBehaviour
     private void ToggleLever()
     {
         isLeverActive = !isLeverActive;
+
         if (isLeverActive)
         {
             spriteRenderer.sprite = onLever;
-            if (canCreatePlatforms = !terrainExists)
+
+            if (canCreatePlatforms && !terrainExists) // Use '&&' and '=='
             {
                 currentTerrain = Instantiate(terrainGameObject, terrainLocation.position, Quaternion.identity);
                 terrainExists = true;
             }
-            else if (canDestroyPlatforms = !terrainExists)
+            else if (canDestroyPlatforms && terrainExists) // Use '&&' and '=='
             {
                 Destroy(currentTerrain);
+                terrainExists = false;
             }
         }
         else
         {
             spriteRenderer.sprite = offLever;
+
             if (canCreatePlatforms && terrainExists)
             {
                 Destroy(currentTerrain);
-                terrainExists = false ;
+                terrainExists = false;
             }
         }
     }
+
 }
