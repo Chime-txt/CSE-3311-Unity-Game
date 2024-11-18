@@ -19759,11 +19759,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2557637069687995277, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.34
+      value: 30.96
       objectReference: {fileID: 0}
     - target: {fileID: 2557637069687995277, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.05
+      value: -8.34
       objectReference: {fileID: 0}
     - target: {fileID: 3306858424392653883, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: deathPlanes
@@ -19839,11 +19839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855463073912606542, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.86
+      value: -16.63
       objectReference: {fileID: 0}
     - target: {fileID: 4855463073912606542, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.9
+      value: -8.26
       objectReference: {fileID: 0}
     - target: {fileID: 5364249623548459947, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: ammoBar
