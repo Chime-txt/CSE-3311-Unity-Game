@@ -73,9 +73,6 @@ public class ChangeSceneScript : MonoBehaviour
 		Application.Quit();
 	}
     // Start is called before the first frame update
-    void Start()
-    {
-        audioFile = FindFirstObjectByType<AudioSource>().gameObject;
-    }
+   
 
 }
