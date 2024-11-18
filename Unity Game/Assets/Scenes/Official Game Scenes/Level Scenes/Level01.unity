@@ -2782,6 +2782,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 382165fd2b3d04b43a65386cb8e78928, type: 3}
+--- !u!1 &898574521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3793478774567460558, guid: 382165fd2b3d04b43a65386cb8e78928, type: 3}
+  m_PrefabInstance: {fileID: 898574520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995565065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7849747045084991423, guid: 157eb9c47bd776044a1cd20c970248de, type: 3}
@@ -12630,6 +12635,10 @@ PrefabInstance:
       value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 3306858424392653883, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+      propertyPath: deathPlanes
+      value: 
+      objectReference: {fileID: 898574521}
+    - target: {fileID: 3306858424392653883, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 287601794}
@@ -12689,6 +12698,10 @@ PrefabInstance:
       propertyPath: ammoBar
       value: 
       objectReference: {fileID: 287601795}
+    - target: {fileID: 8271039930553582454, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+      propertyPath: deathPlanes
+      value: 
+      objectReference: {fileID: 898574521}
     - target: {fileID: 8271039930553582454, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
       propertyPath: levelManager
       value: 
