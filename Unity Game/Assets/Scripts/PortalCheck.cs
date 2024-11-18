@@ -99,15 +99,27 @@ public class PortalCheck : MonoBehaviour
 				{
 					// Play the fade out animation for the red player
 					redPlayerAnimator.SetTrigger("Fadeout");
-					audioSource.PlayOneShot(audioclip);
+
+					// Play audio, if it exists
+					if (audioSource != null)
+					{
+						audioSource.PlayOneShot(audioclip);
+					}
+
 					StartCoroutine(FadeOutPlayer("Red", collision));
 				}
 				if (playerTag == "Blue")
 				{
 					// Play the fade out animation for the blue player
 					bluePlayerAnimator.SetTrigger("Fadeout");
-                    audioSource.PlayOneShot(audioclip);
-                    StartCoroutine(FadeOutPlayer("Blue", collision));
+
+					// Play audio, if it exists
+					if (audioSource != null)
+					{
+						audioSource.PlayOneShot(audioclip);
+					}
+
+					StartCoroutine(FadeOutPlayer("Blue", collision));
 				}
 			}
 			yield return new WaitForFixedUpdate();
@@ -181,15 +193,10 @@ public class PortalCheck : MonoBehaviour
 	{
 		Debug.Log(player.name + " entered the wrong portal and died!");
 
-		// Get the Animator and Movement components from the player
-		Animator playerAnimator = player.GetComponent<Animator>();
-		playerMovement playerMove = player.GetComponent<playerMovement>();
-
-		// Trigger the death animation
-		playerAnimator.SetBool("isDead", true);
-
 		// Disable player movement
+		playerMovement playerMove = player.GetComponent<playerMovement>();
 		playerMove.isAbleToMove = false;
+		playerMove.isOnGround = true;
 
 
 		// Destroy the player GameObject after the delay
@@ -198,6 +205,12 @@ public class PortalCheck : MonoBehaviour
 
 	private IEnumerator DestroyPlayer(GameObject player, float delay)
 	{
+		// Get the Animator and Movement components from the player
+		Animator playerAnimator = player.GetComponent<Animator>();
+
+		// Trigger the death animation
+		playerAnimator.SetBool("isDead", true);
+
 		yield return new WaitForSeconds(delay);
 		Destroy(player); // Destroy the player GameObject after the delay
 		levelManager.gameOver();

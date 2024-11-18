@@ -49,6 +49,11 @@ public class playerMovement : MonoBehaviour
 			IsGrounded(); // Continuously check if on ground
 			rigidBody2D.velocity = new Vector2(horizontal * speed, rigidBody2D.velocity.y); // Ensures smooth physics
 		}
+		else
+		{
+			rigidBody2D.gravityScale = 0.01f;
+			rigidBody2D.velocity = new Vector2(0.0f, 0.0f);
+		}
 	}
 
 	public void Jump(InputAction.CallbackContext context)

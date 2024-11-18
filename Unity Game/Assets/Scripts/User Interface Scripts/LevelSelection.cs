@@ -25,13 +25,19 @@ public class LevelSelection : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    // We can make this function into a button to make it so that the developer can clear the data only at the level select screen
+    //    if (Input.GetKeyDown(KeyCode.B)) // USED FOR DEBUGGING PURPOSES
+    //        // SHOULD BE DELETED WHEN BUILT
+    //    {
+    //        PlayerPrefs.DeleteAll();
+    //    }
+    //}
+
+	// We can make this function into a button to make it so that the user can clear the data only at the level select screen
+	public void ResetGameData()
     {
-        // We can make this function into a button to make it so that the developer can clear the data only at the level select screen
-        if (Input.GetKeyDown(KeyCode.B)) // USED FOR DEBUGGING PURPOSES
-            // SHOULD BE DELETED WHEN BUILT
-        {
-            PlayerPrefs.DeleteAll();
-        }
-    }
+		PlayerPrefs.DeleteAll();
+	}
 }
