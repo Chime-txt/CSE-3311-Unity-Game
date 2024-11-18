@@ -2449,6 +2449,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -8.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1784602967876110929, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 287601794}
+    - target: {fileID: 1784602967876110929, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: bluePlayerAnimator
+      value: 
+      objectReference: {fileID: 1658600713}
+    - target: {fileID: 1784602967876110929, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: levelCompleteMessage
+      value: 
+      objectReference: {fileID: 1949579778}
+    - target: {fileID: 3129745437824490920, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 287601794}
+    - target: {fileID: 3129745437824490920, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: redPlayerAnimator
+      value: 
+      objectReference: {fileID: 1895068601}
+    - target: {fileID: 3129745437824490920, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
+      propertyPath: levelCompleteMessage
+      value: 
+      objectReference: {fileID: 1949579778}
     - target: {fileID: 3140315993856110414, guid: b6741f6515e2c174d8499a54532f9520, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.62
@@ -12562,6 +12586,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!95 &1658600713 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1984864210454253808, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+  m_PrefabInstance: {fileID: 1895068592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1685909090
 GameObject:
   m_ObjectHideFlags: 0
@@ -12877,6 +12906,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c7cfab6a313194080b54d1fcb1e632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1895068601 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2334758276259559355, guid: 6295a9d1f1ad77d48b59830be0b1d261, type: 3}
+  m_PrefabInstance: {fileID: 1895068592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1949579778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 820674540619135175, guid: 58a7056892b48eb4e9d16ad344d4361d, type: 3}
+  m_PrefabInstance: {fileID: 287601793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2009603648
 GameObject:
   m_ObjectHideFlags: 0
